@@ -1,6 +1,8 @@
 package br.com.sidroniolima.admin.application.category;
 
 import br.com.sidroniolima.admin.domain.category.Category;
+import br.com.sidroniolima.admin.domain.exceptions.DomainException;
+import br.com.sidroniolima.admin.domain.validation.handler.ThrowsValidationHandler;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -42,9 +44,9 @@ public class CategoryTest {
                 expectedIsActive
         );
 
-        final var actualException = Assertions.assertThrows(DomainException.class, () -> actualCategory.validate());
+        final var actualException = Assertions.assertThrows(DomainException.class, () -> actualCategory.validate(new ThrowsValidationHandler()));
 
         Assertions.assertEquals(expectedErrorsCount, actualException.getErrors().size());;
-        Assertions.assertEquals(expectedErrorMessage, actualException.getErrors().get(0).getMessage());;
+        Assertions.assertEquals(expectedErrorMessage, actualException.getErrors().get(0).message());;
     }
 }
