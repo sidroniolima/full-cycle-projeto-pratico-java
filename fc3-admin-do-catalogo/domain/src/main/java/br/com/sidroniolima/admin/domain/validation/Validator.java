@@ -12,5 +12,4 @@ public abstract class Validator {
     protected ValidationHandler validationHandler() {
         return this.handler;
     }
-
 }

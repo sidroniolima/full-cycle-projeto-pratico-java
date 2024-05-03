@@ -17,6 +17,5 @@ public class CategoryValidator extends Validator {
         if (this.category.getName() == null) {
             this.validationHandler().append(new Error("'name' should not be null"));
         }
-
     }
 }
