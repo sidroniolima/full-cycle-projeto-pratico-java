@@ -1,5 +1,6 @@
 package br.com.sidroniolima.admin.application.category.delete;
 
+import br.com.sidroniolima.admin.application.UseCaseTest;
 import br.com.sidroniolima.admin.domain.category.Category;
 import br.com.sidroniolima.admin.domain.category.CategoryGateway;
 import br.com.sidroniolima.admin.domain.category.CategoryID;
@@ -12,12 +13,13 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.List;
+
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.times;
 
-@ExtendWith(MockitoExtension.class)
-public class DeleteCategoryUseCaseTest {
+public class DeleteCategoryUseCaseTest extends UseCaseTest {
 
     @Mock
     private CategoryGateway categoryGateway;
@@ -25,9 +27,9 @@ public class DeleteCategoryUseCaseTest {
     @InjectMocks
     public DefaultDeleteCategoryUseCase useCase;
 
-    @BeforeEach
-    public void cleanup() {
-        Mockito.reset(categoryGateway);
+    @Override
+    protected List<Object> getMocks() {
+        return List.of(categoryGateway);
     }
 
     @Test
