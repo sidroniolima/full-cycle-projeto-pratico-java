@@ -6,7 +6,7 @@ import br.com.sidroniolima.admin.domain.validation.Validator;
 
 public class GenreValidator extends Validator {
     public static final int NAME_MAX_LENGTH = 255;
-    public static final int NAME_MIN_LENGTH = 3;
+    public static final int NAME_MIN_LENGTH = 1;
 
     private final Genre genre;
 

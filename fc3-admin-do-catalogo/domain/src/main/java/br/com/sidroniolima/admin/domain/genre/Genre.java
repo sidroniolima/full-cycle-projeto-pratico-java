@@ -59,15 +59,15 @@ public class Genre extends AggregateRoot<GenreID> {
         return new Genre(anId, aName, isActive, categories, createdAt, updatedAt, deletedAt);
     }
 
-    public static Genre with(Genre anGenre) {
+    public static Genre with(Genre aGenre) {
         return new Genre(
-                anGenre.id,
-                anGenre.name,
-                anGenre.active,
-                new ArrayList<>(anGenre.categories),
-                anGenre.createdAt,
-                anGenre.updatedAt,
-                anGenre.deletedAt
+                aGenre.id,
+                aGenre.name,
+                aGenre.active,
+                new ArrayList<>(aGenre.categories),
+                aGenre.createdAt,
+                aGenre.updatedAt,
+                aGenre.deletedAt
         );
     }
 

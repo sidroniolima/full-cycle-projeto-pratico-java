@@ -22,6 +22,7 @@ public class GenreCategoryJpaEntity {
 
     private GenreCategoryJpaEntity(final GenreJpaEntity aGenre, final CategoryID aCategoryId) {
         this.id = GenreCategoryID.from(aGenre.getId(), aCategoryId.getValue());
+        this.genre = aGenre;
     }
 
     public static GenreCategoryJpaEntity from(final GenreJpaEntity aGenre, final CategoryID aCategoryId) {

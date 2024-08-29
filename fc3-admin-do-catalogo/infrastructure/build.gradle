@@ -49,6 +49,8 @@ dependencies {
     implementation('com.fasterxml.jackson.module:jackson-module-afterburner')
 
     testImplementation('org.flywaydb:flyway-core')
+    testImplementation('org.flywaydb:flyway-mysql')
+
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 
     testImplementation('org.testcontainers:testcontainers:1.17.6')
