@@ -46,15 +46,17 @@ public class GenreCategoryJpaEntity {
         return id;
     }
 
-    public void setId(GenreCategoryID id) {
+    public GenreCategoryJpaEntity setId(GenreCategoryID id) {
         this.id = id;
+        return this;
     }
 
     public GenreJpaEntity getGenre() {
         return genre;
     }
 
-    public void setGenre(GenreJpaEntity genre) {
+    public GenreCategoryJpaEntity setGenre(GenreJpaEntity genre) {
         this.genre = genre;
+        return this;
     }
 }

@@ -1,4 +1,4 @@
-package br.com.sidroniolima.admin.infrastructure.models;
+package br.com.sidroniolima.admin.infrastructure.category.models;
 
 import br.com.sidroniolima.admin.JacksonTest;
 import br.com.sidroniolima.admin.infrastructure.category.models.CategoryResponse;

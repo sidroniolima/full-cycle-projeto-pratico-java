@@ -1,4 +1,4 @@
-package br.com.sidroniolima.admin.infrastructure.category.presenter;
+package br.com.sidroniolima.admin.infrastructure.category.presenters;
 
 import br.com.sidroniolima.admin.application.category.retrieve.get.GetCategoryByIdOutput;
 import br.com.sidroniolima.admin.application.category.retrieve.list.CategoryListOutput;

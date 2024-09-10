@@ -1,7 +1,5 @@
-package br.com.sidroniolima.admin.infrastructure.models;
+package br.com.sidroniolima.admin.infrastructure.genre.models;
 
-import br.com.sidroniolima.admin.infrastructure.category.models.CategoryResponse;
-import br.com.sidroniolima.admin.infrastructure.category.models.UpdateCategoryRequest;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,36 +7,36 @@ import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.boot.test.json.JacksonTester;
 
 import java.io.IOException;
-import java.time.Instant;
+import java.util.List;
 
 @JsonTest
-public class UpdateCategoryRequestTest {
+public class UpdateGenreRequestTest {
 
     @Autowired
-    private JacksonTester<UpdateCategoryRequest> json;
+    private JacksonTester<UpdateGenreRequest> json;
 
     @Test
     public void testUnmarshall() throws IOException {
-        final var expectedName = "Filmes";
-        final var expectedDescription = "A categoria mais assistida";
+        final var expectedName = "Ação";
+        final var expectedCategory = "123";
         final var expectedIsActive = true;
 
         final var json = """
                 {
                     "name": "%s",
-                    "description": "%s",
+                    "categories_id": ["%s"],
                     "is_active": "%s"
                 }
                 """.formatted(
                 expectedName,
-                expectedDescription,
+                expectedCategory,
                 expectedIsActive);
 
         final var actualJson = this.json.parse(json);
 
         Assertions.assertThat(actualJson)
                 .hasFieldOrPropertyWithValue("name", expectedName)
-                .hasFieldOrPropertyWithValue("description", expectedDescription)
+                .hasFieldOrPropertyWithValue("categories", List.of(expectedCategory))
                 .hasFieldOrPropertyWithValue("active", expectedIsActive);
     }
 }

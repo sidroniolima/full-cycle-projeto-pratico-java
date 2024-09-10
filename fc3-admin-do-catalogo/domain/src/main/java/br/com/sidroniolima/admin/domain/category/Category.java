@@ -1,6 +1,7 @@
 package br.com.sidroniolima.admin.domain.category;
 
 import br.com.sidroniolima.admin.domain.AggregateRoot;
+import br.com.sidroniolima.admin.domain.utils.InstantUtils;
 import br.com.sidroniolima.admin.domain.validation.ValidationHandler;
 
 import java.time.Instant;
@@ -35,7 +36,7 @@ public class Category extends AggregateRoot<CategoryID> implements Cloneable {
                                        final String aDescription,
                                        final boolean aIsActive) {
         final var id = CategoryID.unique();
-        final var now = Instant.now();
+        final var now = InstantUtils.now();
         final var deletedAt = aIsActive ? null : now;
 
         return new Category(
@@ -85,11 +86,11 @@ public class Category extends AggregateRoot<CategoryID> implements Cloneable {
 
     public Category deactivate() {
         if (getDeletedAt() == null) {
-            this.deletedAt = Instant.now();
+            this.deletedAt = InstantUtils.now();
         }
 
         this.active = false;
-        this.updatedAt = Instant.now();
+        this.updatedAt = InstantUtils.now();
         return this;
     }
 
@@ -102,14 +103,14 @@ public class Category extends AggregateRoot<CategoryID> implements Cloneable {
 
         this.name = aName;
         this.description = aDescription;
-        this.updatedAt = Instant.now();
+        this.updatedAt = InstantUtils.now();
         return this;
     }
 
     public Category activate() {
         this.deletedAt = null;
         this.active = true;
-        this.updatedAt = Instant.now();
+        this.updatedAt = InstantUtils.now();
         return this;
     }
 

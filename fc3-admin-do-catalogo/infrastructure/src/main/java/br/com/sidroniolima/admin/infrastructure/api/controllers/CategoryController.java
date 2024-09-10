@@ -17,7 +17,7 @@ import br.com.sidroniolima.admin.infrastructure.category.models.CategoryListResp
 import br.com.sidroniolima.admin.infrastructure.category.models.CategoryResponse;
 import br.com.sidroniolima.admin.infrastructure.category.models.CreateCategoryRequest;
 import br.com.sidroniolima.admin.infrastructure.category.models.UpdateCategoryRequest;
-import br.com.sidroniolima.admin.infrastructure.category.presenter.CategoryApiPresenter;
+import br.com.sidroniolima.admin.infrastructure.category.presenters.CategoryApiPresenter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
