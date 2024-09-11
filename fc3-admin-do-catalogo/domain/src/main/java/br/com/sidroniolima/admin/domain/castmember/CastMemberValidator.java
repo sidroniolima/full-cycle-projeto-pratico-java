@@ -1,23 +1,28 @@
-package br.com.sidroniolima.admin.domain.category;
+package br.com.sidroniolima.admin.domain.castmember;
 
 import br.com.sidroniolima.admin.domain.validation.Error;
 import br.com.sidroniolima.admin.domain.validation.ValidationHandler;
 import br.com.sidroniolima.admin.domain.validation.Validator;
 
-public class CategoryValidator extends Validator {
+public class CastMemberValidator extends Validator {
     private static final int NAME_MAX_LENGTH = 255;
     private static final int NAME_MIN_LENGTH = 3;
 
-    private final Category category;
+    private final CastMember castMember;
 
-    public CategoryValidator(Category category, ValidationHandler aHandler) {
-        super(aHandler);
-        this.category = category;
+    public CastMemberValidator(final CastMember aMember, final ValidationHandler aHanlder) {
+        super(aHanlder);
+        this.castMember = aMember;
     }
 
     @Override
     public void validate() {
-        final var name = this.category.getName();
+        checkNameConstraints();
+        checkTypeConstraints();
+    }
+
+    private void checkNameConstraints() {
+        final var name = this.castMember.getName();
 
         if (name == null) {
             this.validationHandler().append(new Error("'name' should not be null"));
@@ -34,6 +39,14 @@ public class CategoryValidator extends Validator {
         if (length < NAME_MIN_LENGTH || length > NAME_MAX_LENGTH) {
             this.validationHandler().append(new Error("'name' must be between 3 and 255 characters"));
 
+        }
+    }
+
+    private void checkTypeConstraints() {
+        final var type = this.castMember.getType();
+
+        if (type == null) {
+            this.validationHandler().append(new Error("'type' should not be null"));
         }
     }
 }

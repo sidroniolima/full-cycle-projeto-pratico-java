@@ -1,6 +1,5 @@
-package br.com.sidroniolima.admin.application.category;
+package br.com.sidroniolima.admin.domain.category;
 
-import br.com.sidroniolima.admin.domain.category.Category;
 import br.com.sidroniolima.admin.domain.exceptions.DomainException;
 import br.com.sidroniolima.admin.domain.validation.handler.ThrowsValidationHandler;
 import org.junit.jupiter.api.Assertions;
