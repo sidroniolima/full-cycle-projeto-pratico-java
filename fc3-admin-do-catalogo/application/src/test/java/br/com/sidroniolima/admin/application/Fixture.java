@@ -3,8 +3,6 @@ package br.com.sidroniolima.admin.application;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberType;
 import com.github.javafaker.Faker;
 
-import java.util.Arrays;
-
 public final class Fixture {
     private static final Faker FAKER = new Faker();
 

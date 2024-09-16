@@ -37,7 +37,7 @@ public class CastMember extends AggregateRoot<CastMemberID> {
         return new CastMember(anId, aName, aType, now, now);
     }
 
-    public CastMember with(
+    public static CastMember with(
             final CastMemberID anId,
             final String aName,
             final CastMemberType aType,
@@ -53,7 +53,7 @@ public class CastMember extends AggregateRoot<CastMemberID> {
         );
     }
 
-    public CastMember with(
+    public static CastMember with(
             final CastMember aMember
     ) {
         return new CastMember(
