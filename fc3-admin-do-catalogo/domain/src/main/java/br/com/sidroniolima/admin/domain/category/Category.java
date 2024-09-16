@@ -1,8 +1,11 @@
 package br.com.sidroniolima.admin.domain.category;
 
 import br.com.sidroniolima.admin.domain.AggregateRoot;
+import br.com.sidroniolima.admin.domain.exceptions.DomainException;
 import br.com.sidroniolima.admin.domain.utils.InstantUtils;
+import br.com.sidroniolima.admin.domain.validation.Error;
 import br.com.sidroniolima.admin.domain.validation.ValidationHandler;
+import br.com.sidroniolima.admin.domain.validation.handler.ThrowsValidationHandler;
 
 import java.time.Instant;
 import java.util.Objects;
