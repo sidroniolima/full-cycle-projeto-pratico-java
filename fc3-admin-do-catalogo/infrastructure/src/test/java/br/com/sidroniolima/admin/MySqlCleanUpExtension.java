@@ -1,5 +1,6 @@
 package br.com.sidroniolima.admin;
 
+import br.com.sidroniolima.admin.infrastructure.castmember.persistence.CastMemberRepository;
 import br.com.sidroniolima.admin.infrastructure.category.persistence.CategoryRepository;
 import br.com.sidroniolima.admin.infrastructure.genre.persistence.GenreRepository;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
@@ -21,7 +22,8 @@ public class MySqlCleanUpExtension implements BeforeEachCallback {
 
         cleanUp(List.of(
                 appContext.getBean(GenreRepository.class),
-                appContext.getBean(CategoryRepository.class)
+                appContext.getBean(CategoryRepository.class),
+                appContext.getBean(CastMemberRepository.class)
         ));
     }
 
