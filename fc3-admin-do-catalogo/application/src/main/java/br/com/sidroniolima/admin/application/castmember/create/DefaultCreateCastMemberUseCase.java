@@ -6,8 +6,8 @@ import br.com.sidroniolima.admin.domain.exceptions.NotificationException;
 import br.com.sidroniolima.admin.domain.validation.handler.Notification;
 
 import java.util.Objects;
-
-public final class DefaultCreateCastMemberUseCase extends CreateCastMemberUseCase {
+// non-sealed pois caso contrário o Mock não consegue estendê-la
+public non-sealed class DefaultCreateCastMemberUseCase extends CreateCastMemberUseCase {
 
     private final CastMemberGateway castMemberGateway;
 
