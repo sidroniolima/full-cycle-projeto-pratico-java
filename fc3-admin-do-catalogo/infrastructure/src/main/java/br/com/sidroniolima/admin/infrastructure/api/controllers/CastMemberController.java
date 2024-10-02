@@ -4,9 +4,13 @@ import br.com.sidroniolima.admin.application.castmember.create.CreateCastMemberC
 import br.com.sidroniolima.admin.application.castmember.create.CreateCastMemberUseCase;
 import br.com.sidroniolima.admin.application.castmember.delete.DeleteCastMemberUseCase;
 import br.com.sidroniolima.admin.application.castmember.retrieve.get.GetCastMemberByIdUseCase;
+import br.com.sidroniolima.admin.application.castmember.retrieve.list.ListCastMemberUseCase;
 import br.com.sidroniolima.admin.application.castmember.update.UpdateCastMemberCommand;
 import br.com.sidroniolima.admin.application.castmember.update.UpdateCastMemberUseCase;
+import br.com.sidroniolima.admin.domain.pagination.Pagination;
+import br.com.sidroniolima.admin.domain.pagination.SearchQuery;
 import br.com.sidroniolima.admin.infrastructure.api.CastMemberAPI;
+import br.com.sidroniolima.admin.infrastructure.castmember.models.CastMemberListResponse;
 import br.com.sidroniolima.admin.infrastructure.castmember.models.CastMemberResponse;
 import br.com.sidroniolima.admin.infrastructure.castmember.models.CreateCastMemberRequest;
 import br.com.sidroniolima.admin.infrastructure.castmember.models.UpdateCastMemberRequest;
@@ -24,15 +28,18 @@ public class CastMemberController implements CastMemberAPI {
     private final GetCastMemberByIdUseCase getCastMemberByIdUseCase;
     private final UpdateCastMemberUseCase updateCastMemberUseCase;
     private final DeleteCastMemberUseCase deleteCastMemberUseCase;
+    private final ListCastMemberUseCase listCastMemberUseCase;
 
     public CastMemberController(final CreateCastMemberUseCase createCastMemberUseCase,
                                 final GetCastMemberByIdUseCase getCastMemberByIdUseCase,
                                 final UpdateCastMemberUseCase updateCastMemberUseCase,
-                                final DeleteCastMemberUseCase deleteCastMemberUseCase) {
+                                final DeleteCastMemberUseCase deleteCastMemberUseCase,
+                                final ListCastMemberUseCase listCastMemberUseCase) {
         this.createCastMemberUseCase = Objects.requireNonNull(createCastMemberUseCase);
         this.getCastMemberByIdUseCase = Objects.requireNonNull(getCastMemberByIdUseCase);
         this.updateCastMemberUseCase = Objects.requireNonNull(updateCastMemberUseCase);
         this.deleteCastMemberUseCase = Objects.requireNonNull(deleteCastMemberUseCase);
+        this.listCastMemberUseCase = Objects.requireNonNull(listCastMemberUseCase);
     }
 
     @Override
@@ -61,5 +68,18 @@ public class CastMemberController implements CastMemberAPI {
     @Override
     public void deleteById(final String anId) {
         this.deleteCastMemberUseCase.execute(anId);
+    }
+
+    @Override
+    public Pagination<CastMemberListResponse> list(
+            final String search,
+            final int page,
+            final int perPage,
+            final String sort,
+            final String direction
+    ) {
+        return this.listCastMemberUseCase.execute(
+                new SearchQuery(page, perPage, search, sort, direction)
+        ).map(CastMemberPresenter::present);
     }
 }

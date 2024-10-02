@@ -262,9 +262,11 @@ public class CastMemberAPITest {
                 .when(deleteCastMemberUseCase).execute(any());
 
         // when
-        final var aRequest = delete("/cast_members/{id}", expectedId);
+        final var aRequest = delete("/cast_members/{id}", expectedId)
+                .contentType(MediaType.APPLICATION_JSON);
 
-        final var response = this.mvc.perform(aRequest);
+        final var response = this.mvc.perform(aRequest)
+                .andDo(print());
 
         // then
         response.andExpect(status().isNoContent());
@@ -309,9 +311,8 @@ public class CastMemberAPITest {
                 .andExpect(jsonPath("$.total", equalTo(expectedTotal)))
                 .andExpect(jsonPath("$.items", hasSize(expectedItemsCount)))
                 .andExpect(jsonPath("$.items[0].id", equalTo(aMember.getId().getValue())))
-                .andExpect(jsonPath("$.items[0].type", equalTo(aMember.getName())))
-                .andExpect(jsonPath("$.items[0].type", equalTo(aMember.getType())))
-                .andExpect(jsonPath("$.items[0].create_at", equalTo(aMember.getCreatedAt())));
+                .andExpect(jsonPath("$.items[0].name", equalTo(aMember.getName())))
+                .andExpect(jsonPath("$.items[0].type", equalTo(aMember.getType().name())));
 
 
         verify(listCastMemberUseCase).execute(argThat(aQuery ->
@@ -360,9 +361,8 @@ public class CastMemberAPITest {
                 .andExpect(jsonPath("$.total", equalTo(expectedTotal)))
                 .andExpect(jsonPath("$.items", hasSize(expectedItemsCount)))
                 .andExpect(jsonPath("$.items[0].id", equalTo(aMember.getId().getValue())))
-                .andExpect(jsonPath("$.items[0].type", equalTo(aMember.getName())))
-                .andExpect(jsonPath("$.items[0].type", equalTo(aMember.getType())))
-                .andExpect(jsonPath("$.items[0].create_at", equalTo(aMember.getCreatedAt())));
+                .andExpect(jsonPath("$.items[0].name", equalTo(aMember.getName())))
+                .andExpect(jsonPath("$.items[0].type", equalTo(aMember.getType().name())));
 
 
         verify(listCastMemberUseCase).execute(argThat(aQuery ->

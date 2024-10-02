@@ -1,8 +1,12 @@
 package br.com.sidroniolima.admin.e2e;
 
 import br.com.sidroniolima.admin.domain.Identifier;
+import br.com.sidroniolima.admin.domain.castmember.CastMemberID;
+import br.com.sidroniolima.admin.domain.castmember.CastMemberType;
 import br.com.sidroniolima.admin.domain.category.CategoryID;
 import br.com.sidroniolima.admin.domain.genre.GenreID;
+import br.com.sidroniolima.admin.infrastructure.castmember.models.CastMemberResponse;
+import br.com.sidroniolima.admin.infrastructure.castmember.models.CreateCastMemberRequest;
 import br.com.sidroniolima.admin.infrastructure.category.models.CategoryResponse;
 import br.com.sidroniolima.admin.infrastructure.category.models.CreateCategoryRequest;
 import br.com.sidroniolima.admin.infrastructure.category.models.UpdateCategoryRequest;
@@ -23,6 +27,54 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public interface MockDsl {
 
     MockMvc mvc();
+
+    /**
+     * CastMember
+     */
+
+    default CastMemberID givenACastMember(final String aName, final CastMemberType aType) throws Exception {
+        final var aRequestBody = new CreateCastMemberRequest(aName, aType);
+        final var actualId = this.given("/cast_members", aRequestBody);
+        return CastMemberID.from(actualId);
+    }
+
+    default ResultActions givenACastMemberResult(final String aName, final CastMemberType aType) throws Exception {
+        final var aRequestBody = new CreateCastMemberRequest(aName, aType);
+        return this.givenResult("/cast_members", aRequestBody);
+    }
+
+    default ResultActions listCastMembers(final int page, final int perPage, String search) throws Exception {
+        return listCastMembers(page, perPage, search, "", "");
+    }
+
+    default ResultActions listCastMembers(final int page, final int perPage) throws Exception {
+        return listCastMembers(page, perPage, "", "", "");
+    }
+
+    default ResultActions listCastMembers(final int page,
+                                     final int perPage,
+                                     final String search,
+                                     final String sort,
+                                     final String direction) throws Exception {
+        return this.list("/cast_members",
+                page,
+                perPage,
+                search,
+                sort,
+                direction);
+    }
+
+    default CastMemberResponse retrieveACastMember(final CastMemberID anId) throws Exception {
+        return this.retrieve("/cast_members/", anId, CastMemberResponse.class);
+    }
+
+    default ResultActions retrieveACastMemberResult(final CastMemberID anId) throws Exception {
+        return this.retrieveResult("/cast_members/", anId);
+    }
+
+    /**
+     * Category
+     */
 
     default ResultActions deleteACategory(final Identifier anId) throws Exception {
         return this.delete("/categories/", anId);
@@ -55,13 +107,17 @@ public interface MockDsl {
                 direction);
     }
 
-    default CategoryResponse retrieveACategory(final Identifier anId) throws Exception {
+    default CategoryResponse retrieveACategory(final CategoryID anId) throws Exception {
         return this.retrieve("/categories/", anId, CategoryResponse.class);
     }
 
-    default ResultActions updateACategory(final Identifier anId, final UpdateCategoryRequest aRequest) throws Exception {
+    default ResultActions updateACategory(final CategoryID anId, final UpdateCategoryRequest aRequest) throws Exception {
         return this.update("/categories/", anId, aRequest);
     }
+
+    /**
+     * Genre
+     */
 
     default GenreID givenAGenre(final String aName,
                                 final boolean isActive,
@@ -93,15 +149,15 @@ public interface MockDsl {
                 direction);
     }
 
-    default GenreResponse retrieveAGenre(final Identifier anId) throws Exception {
+    default GenreResponse retrieveAGenre(final GenreID anId) throws Exception {
         return this.retrieve("/genres/", anId, GenreResponse.class);
     }
 
-    default ResultActions updateAGenre(final Identifier anId, final UpdateGenreRequest aRequest) throws Exception {
+    default ResultActions updateAGenre(final GenreID anId, final UpdateGenreRequest aRequest) throws Exception {
         return this.update("/genres/", anId, aRequest);
     }
 
-    default ResultActions deleteAGenre(final Identifier anId) throws Exception {
+    default ResultActions deleteAGenre(final GenreID anId) throws Exception {
         return this.delete("/genres/", anId);
     }
 
@@ -122,6 +178,15 @@ public interface MockDsl {
                 .andReturn()
                 .getResponse().getHeader("Location")
                 .replace("%s/".formatted(url), "");
+    }
+
+    private ResultActions givenResult(final String url, final Object body) throws Exception {
+
+        final var aRequest = MockMvcRequestBuilders.post(url)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(Json.writeValueAsString(body));
+
+        return this.mvc().perform(aRequest);
     }
 
     private ResultActions list(
@@ -154,6 +219,14 @@ public interface MockDsl {
                 .getResponse().getContentAsString();
 
         return Json.readValue(json, clazz);
+    }
+
+    private ResultActions retrieveResult(final String url, final Identifier anId) throws Exception {
+        final var aRequest = MockMvcRequestBuilders.get(url + anId.getValue())
+                .accept(MediaType.APPLICATION_JSON_UTF8)
+                .contentType(MediaType.APPLICATION_JSON_UTF8);
+
+        return this.mvc().perform(aRequest);
     }
 
     private ResultActions delete(final String url, final Identifier anId) throws Exception {
