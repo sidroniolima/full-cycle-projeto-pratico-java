@@ -37,7 +37,6 @@ public class GenreValidator extends Validator {
 
         if (length < NAME_MIN_LENGTH || length > NAME_MAX_LENGTH) {
             this.validationHandler().append(new Error("'name' must be between 1 and 255 characters"));
-
         }
     }
 }

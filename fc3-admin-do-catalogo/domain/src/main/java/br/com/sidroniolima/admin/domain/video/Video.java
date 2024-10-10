@@ -9,8 +9,7 @@ import br.com.sidroniolima.admin.domain.validation.ValidationHandler;
 
 import java.time.Instant;
 import java.time.Year;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 public class Video extends AggregateRoot<VideoID> {
 
@@ -86,7 +85,7 @@ public class Video extends AggregateRoot<VideoID> {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(final String title) {
         this.title = title;
     }
 
@@ -94,7 +93,7 @@ public class Video extends AggregateRoot<VideoID> {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(final String description) {
         this.description = description;
     }
 
@@ -102,7 +101,7 @@ public class Video extends AggregateRoot<VideoID> {
         return launchedAt;
     }
 
-    public void setLaunchedAt(Year launchedAt) {
+    public void setLaunchedAt(final Year launchedAt) {
         this.launchedAt = launchedAt;
     }
 
@@ -110,7 +109,7 @@ public class Video extends AggregateRoot<VideoID> {
         return duration;
     }
 
-    public void setDuration(double duration) {
+    public void setDuration(final double duration) {
         this.duration = duration;
     }
 
@@ -118,7 +117,7 @@ public class Video extends AggregateRoot<VideoID> {
         return rating;
     }
 
-    public void setRating(Rating rating) {
+    public void setRating(final Rating rating) {
         this.rating = rating;
     }
 
@@ -126,7 +125,7 @@ public class Video extends AggregateRoot<VideoID> {
         return opened;
     }
 
-    public void setOpened(boolean opened) {
+    public void setOpened(final boolean opened) {
         this.opened = opened;
     }
 
@@ -134,7 +133,7 @@ public class Video extends AggregateRoot<VideoID> {
         return published;
     }
 
-    public void setPublished(boolean published) {
+    public void setPublished(final boolean published) {
         this.published = published;
     }
 
@@ -142,7 +141,7 @@ public class Video extends AggregateRoot<VideoID> {
         return createdAt;
     }
 
-    public void setCreatedAt(Instant createdAt) {
+    public void setCreatedAt(final Instant createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -150,7 +149,7 @@ public class Video extends AggregateRoot<VideoID> {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Instant updatedAt) {
+    public void setUpdatedAt(final Instant updatedAt) {
         this.updatedAt = updatedAt;
     }
 
@@ -158,7 +157,7 @@ public class Video extends AggregateRoot<VideoID> {
         return Optional.ofNullable(banner);
     }
 
-    public void setBanner(ImageMedia banner) {
+    public void setBanner(final ImageMedia banner) {
         this.banner = banner;
     }
 
@@ -166,7 +165,7 @@ public class Video extends AggregateRoot<VideoID> {
         return Optional.ofNullable(thumbnail);
     }
 
-    public void setThumbnail(ImageMedia thumbnail) {
+    public void setThumbnail(final ImageMedia thumbnail) {
         this.thumbnail = thumbnail;
     }
 
@@ -174,7 +173,7 @@ public class Video extends AggregateRoot<VideoID> {
         return Optional.ofNullable(thumbnailHalf);
     }
 
-    public void setThumbnailHalf(ImageMedia thumbnailHalf) {
+    public void setThumbnailHalf(final ImageMedia thumbnailHalf) {
         this.thumbnailHalf = thumbnailHalf;
     }
 
@@ -182,7 +181,7 @@ public class Video extends AggregateRoot<VideoID> {
         return Optional.ofNullable(trailer);
     }
 
-    public void setTrailer(AudioVideoMedia trailer) {
+    public void setTrailer(final AudioVideoMedia trailer) {
         this.trailer = trailer;
     }
 
@@ -190,32 +189,35 @@ public class Video extends AggregateRoot<VideoID> {
         return Optional.ofNullable(video);
     }
 
-    public void setVideo(AudioVideoMedia video) {
+    public void setVideo(final AudioVideoMedia video) {
         this.video = video;
     }
 
     public Set<CategoryID> getCategories() {
-        return categories;
+        return categories != null ? Collections.unmodifiableSet(categories) : Collections.emptySet();
     }
 
-    public void setCategories(Set<CategoryID> categories) {
-        this.categories = categories;
+    public Video setCategories(final Set<CategoryID> categories) {
+        this.categories = categories != null ? new HashSet<>(categories) : Collections.emptySet();
+        return this;
     }
 
     public Set<GenreID> getGenres() {
-        return genres;
+        return genres != null ? Collections.unmodifiableSet(genres) : Collections.emptySet();
     }
 
-    public void setGenres(Set<GenreID> genres) {
-        this.genres = genres;
+    public Video setGenres(final Set<GenreID> genres) {
+        this.genres = genres != null ? new HashSet<>(genres) : Collections.emptySet();
+        return this;
     }
 
     public Set<CastMemberID> getCastMembers() {
-        return castMembers;
+        return castMembers != null ? Collections.unmodifiableSet(castMembers) : Collections.emptySet();
     }
 
-    public void setCastMembers(Set<CastMemberID> castMembers) {
-        this.castMembers = castMembers;
+    public Video setCastMembers(final Set<CastMemberID> castMembers) {
+        this.castMembers = castMembers != null ? new HashSet<>(castMembers) : Collections.emptySet();
+        return this;
     }
 
     public static Video newVideo(
@@ -274,9 +276,9 @@ public class Video extends AggregateRoot<VideoID> {
                 aVideo.getThumbnailHalf().orElse(null),
                 aVideo.getTrailer().orElse(null),
                 aVideo.getVideo().orElse(null),
-                aVideo.getCategories(),
-                aVideo.getGenres(),
-                aVideo.getCastMembers()
+                new HashSet<>(aVideo.getCategories()),
+                new HashSet<>(aVideo.getGenres()),
+                new HashSet<>(aVideo.getCastMembers())
         );
     }
 }
