@@ -4,7 +4,6 @@ import br.com.sidroniolima.admin.domain.castmember.CastMemberID;
 import br.com.sidroniolima.admin.domain.category.CategoryID;
 import br.com.sidroniolima.admin.domain.exceptions.DomainException;
 import br.com.sidroniolima.admin.domain.genre.GenreID;
-import br.com.sidroniolima.admin.domain.validation.ValidationHandler;
 import br.com.sidroniolima.admin.domain.validation.handler.ThrowsValidationHandler;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -30,8 +29,8 @@ public class VideoValidatorTest {
         final var expectedGenres = Set.of(GenreID.unique());
         final var expectedMembers = Set.of(CastMemberID.unique());
 
-        final var expectedErrorCount = 0;
-        final var expectedErrorMessage = "'name' should not be null";
+        final var expectedErrorCount = 1;
+        final var expectedErrorMessage = "'title' should not be null";
 
         final var actualVideo = Video.newVideo(
                 expectedTitle,
@@ -76,8 +75,8 @@ public class VideoValidatorTest {
         final var expectedGenres = Set.of(GenreID.unique());
         final var expectedMembers = Set.of(CastMemberID.unique());
 
-        final var expectedErrorCount = 0;
-        final var expectedErrorMessage = "'name' should not be empty";
+        final var expectedErrorCount = 1;
+        final var expectedErrorMessage = "'title' should not be empty";
 
         final var actualVideo = Video.newVideo(
                 expectedTitle,
@@ -136,8 +135,8 @@ public class VideoValidatorTest {
         final var expectedGenres = Set.of(GenreID.unique());
         final var expectedMembers = Set.of(CastMemberID.unique());
 
-        final var expectedErrorCount = 0;
-        final var expectedErrorMessage = "'name' must be between 1 and 255 characters";
+        final var expectedErrorCount = 1;
+        final var expectedErrorMessage = "'title' must be between 1 and 255 characters";
 
         final var actualVideo = Video.newVideo(
                 expectedTitle,
@@ -180,7 +179,7 @@ public class VideoValidatorTest {
         final var expectedGenres = Set.of(GenreID.unique());
         final var expectedMembers = Set.of(CastMemberID.unique());
 
-        final var expectedErrorCount = 0;
+        final var expectedErrorCount = 1;
         final var expectedErrorMessage = "'description' should not be empty";
 
         final var actualVideo = Video.newVideo(
@@ -211,7 +210,7 @@ public class VideoValidatorTest {
     }
 
     @Test
-    public void givenDescriptionWithLengthGreaterThan400_whenCallsValidate_shouldReceiveError() {
+    public void givenDescriptionWithLengthGreaterThan4000_whenCallsValidate_shouldReceiveError() {
         // given
         final var expectedTitle = "System Design Inverviews";
 
@@ -234,8 +233,8 @@ public class VideoValidatorTest {
         final var expectedGenres = Set.of(GenreID.unique());
         final var expectedMembers = Set.of(CastMemberID.unique());
 
-        final var expectedErrorCount = 0;
-        final var expectedErrorMessage = "'name' must be between 1 and 255 characters";
+        final var expectedErrorCount = 1;
+        final var expectedErrorMessage = "'description' must be between 1 and 4000 characters";
 
         final var actualVideo = Video.newVideo(
                 expectedTitle,
@@ -278,7 +277,7 @@ public class VideoValidatorTest {
         final var expectedGenres = Set.of(GenreID.unique());
         final var expectedMembers = Set.of(CastMemberID.unique());
 
-        final var expectedErrorCount = 0;
+        final var expectedErrorCount = 1;
         final var expectedErrorMessage = "'launchedAt' should not be null";
 
         final var actualVideo = Video.newVideo(
@@ -322,7 +321,7 @@ public class VideoValidatorTest {
         final var expectedGenres = Set.of(GenreID.unique());
         final var expectedMembers = Set.of(CastMemberID.unique());
 
-        final var expectedErrorCount = 0;
+        final var expectedErrorCount = 1;
         final var expectedErrorMessage = "'rating' should not be null";
 
         final var actualVideo = Video.newVideo(

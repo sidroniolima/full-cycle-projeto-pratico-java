@@ -15,7 +15,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @JacksonTest
-class CastMemberResponseTest {
+class CastMembersResponseTest {
 
     @Autowired
     private JacksonTester<CastMemberResponse> json;

@@ -1,38 +1,35 @@
 package br.com.sidroniolima.admin.application.castmember.retrieve.get;
 
-import br.com.sidroniolima.admin.application.Fixture;
-import br.com.sidroniolima.admin.application.UseCaseTest;
+import br.com.sidroniolima.admin.Fixture;
+import br.com.sidroniolima.admin.IntegrationTest;
 import br.com.sidroniolima.admin.domain.castmember.CastMember;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberGateway;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberID;
 import br.com.sidroniolima.admin.domain.exceptions.NotFoundException;
+import br.com.sidroniolima.admin.infrastructure.castmember.persistence.CastMemberJpaEntity;
+import br.com.sidroniolima.admin.infrastructure.castmember.persistence.CastMemberRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-
-import java.util.List;
-import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.mock.mockito.SpyBean;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
-public class GetCastMemberByIdUseCaseTest extends UseCaseTest {
+@IntegrationTest
+public class GetCastMembersByIdUseCaseIT {
 
-    @InjectMocks
+    @Autowired
     private DefaultGetCastMemberByIdUseCase useCase;
 
-    @Mock
+    @Autowired
+    private CastMemberRepository castMemberRepository;
+
+    @SpyBean
     private CastMemberGateway castMemberGateway;
 
-    @Override
-    protected List<Object> getMocks() {
-        return List.of(castMemberGateway);
-    }
-
     @Test
-    public void givenAValidId_whenCallsGetCastMember_shoudReturnId() {
+    public void givenAValidId_whenCallsGetCastMember_shouldReturnId() {
         // given
         final var expectedName = Fixture.name();
         final var expectedType = Fixture.CastMember.type();
@@ -41,8 +38,9 @@ public class GetCastMemberByIdUseCaseTest extends UseCaseTest {
 
         final var expectedId = aMember.getId();
 
-        when(castMemberGateway.findById(any()))
-                .thenReturn(Optional.of(CastMember.with(aMember)));
+        this.castMemberRepository.saveAndFlush(CastMemberJpaEntity.from(aMember));
+
+        Assertions.assertEquals(1, this.castMemberRepository.count());
 
         // when
         final var actualOutput = useCase.execute(expectedId.getValue());
@@ -55,7 +53,7 @@ public class GetCastMemberByIdUseCaseTest extends UseCaseTest {
         Assertions.assertEquals(aMember.getCreatedAt(), actualOutput.createdAt());
         Assertions.assertEquals(aMember.getUpdatedAt(), actualOutput.updatedAt());
 
-        verify(castMemberGateway).findById(expectedId);
+        verify(castMemberGateway).findById(any());
     }
 
     @Test
@@ -63,9 +61,6 @@ public class GetCastMemberByIdUseCaseTest extends UseCaseTest {
         // given
         final var expectedId = CastMemberID.from("123");
         final var expectedMessage = "CastMember with ID 123 was not found";
-
-        when(castMemberGateway.findById(any()))
-                .thenReturn(Optional.empty());
 
         // when
         final var actualException = Assertions.assertThrows(NotFoundException.class,

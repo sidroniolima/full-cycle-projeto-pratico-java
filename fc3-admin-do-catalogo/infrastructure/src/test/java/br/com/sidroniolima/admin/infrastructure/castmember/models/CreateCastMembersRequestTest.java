@@ -12,7 +12,7 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.*;
 
 @JacksonTest
-class CreateCastMemberRequestTest {
+class CreateCastMembersRequestTest {
 
     @Autowired
     private JacksonTester<CreateCastMemberRequest> json;

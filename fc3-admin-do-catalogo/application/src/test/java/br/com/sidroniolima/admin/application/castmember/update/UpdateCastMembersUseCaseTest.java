@@ -21,7 +21,7 @@ import static org.mockito.AdditionalAnswers.returnsFirstArg;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-public class UpdateCastMemberUseCaseTest extends UseCaseTest {
+public class UpdateCastMembersUseCaseTest extends UseCaseTest {
 
     @InjectMocks
     private DefaultUpdateCastMemberUseCase useCase;

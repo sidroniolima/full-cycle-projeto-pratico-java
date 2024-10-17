@@ -23,7 +23,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @IntegrationTest
-public class UpdateCastMemberUseCaseIT {
+public class UpdateCastMembersUseCaseIT {
 
     @Autowired
     private UpdateCastMemberUseCase useCase;

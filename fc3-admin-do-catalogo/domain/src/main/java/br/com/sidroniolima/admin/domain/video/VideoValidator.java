@@ -18,6 +18,9 @@ public class VideoValidator extends Validator {
     @Override
     public void validate() {
         checkTitleConstraints();
+        checkDescriptionConstraints();
+        checkRatingConstraints();
+        checkLaunchedAtConstraints();
     }
 
     private void checkTitleConstraints() {

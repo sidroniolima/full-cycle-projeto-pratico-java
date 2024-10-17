@@ -18,7 +18,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class ListCastMemberUseCaseTest extends UseCaseTest {
+public class ListCastMembersUseCaseTest extends UseCaseTest {
 
     @InjectMocks
     private DefaultListCastMemberUseCase useCase;
@@ -35,8 +35,8 @@ public class ListCastMemberUseCaseTest extends UseCaseTest {
     public void givenAValidQuery_whenCallsListCastMembers_shouldReturnAll() {
         // given
         final var members = List.of(
-                CastMember.newMember(Fixture.name(), Fixture.CastMember.type()),
-                CastMember.newMember(Fixture.name(), Fixture.CastMember.type())
+                CastMember.newMember(Fixture.name(), Fixture.CastMembers.type()),
+                CastMember.newMember(Fixture.name(), Fixture.CastMembers.type())
         );
 
         final var expectedPage = 0;

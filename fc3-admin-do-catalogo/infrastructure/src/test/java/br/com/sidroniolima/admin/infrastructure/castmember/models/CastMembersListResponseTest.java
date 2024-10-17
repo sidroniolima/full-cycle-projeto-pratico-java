@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.time.Instant;
 
 @JsonTest
-class CastMemberListResponseTest {
+class CastMembersListResponseTest {
 
     @Autowired
     private JacksonTester<CastMemberListResponse> json;

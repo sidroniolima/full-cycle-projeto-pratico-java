@@ -19,7 +19,7 @@ import static br.com.sidroniolima.admin.Fixture.CastMember.type;
 import static br.com.sidroniolima.admin.Fixture.name;
 
 @MySQLGatewayTest
-public class CastMemberMySQLGatewayTest {
+public class CastMembersMySQLGatewayTest {
 
     @Autowired
     private CastMemberMySQLGateway castMemberGateway;

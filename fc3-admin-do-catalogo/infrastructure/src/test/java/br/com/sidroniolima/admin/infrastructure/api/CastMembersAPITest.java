@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ControllerTest(controllers = CastMemberAPI.class)
-public class CastMemberAPITest {
+public class CastMembersAPITest {
 
     @Autowired
     private MockMvc mvc;

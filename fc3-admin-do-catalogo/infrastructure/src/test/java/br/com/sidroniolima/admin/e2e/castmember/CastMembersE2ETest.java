@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @E2ETest
 @Testcontainers
-public class CastMemberE2ETest implements MockDsl {
+public class CastMembersE2ETest implements MockDsl {
 
     @Autowired
     private MockMvc mvc;

@@ -17,7 +17,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 
 @IntegrationTest
-public class DeleteCastMemberUseCaseIT {
+public class DeleteCastMembersUseCaseIT {
 
     @Autowired
     private DeleteCastMemberUseCase useCase;

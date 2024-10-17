@@ -257,8 +257,4 @@ public class CreateGenreUseCaseTest extends UseCaseTest {
                         && Objects.nonNull(aGenre.getDeletedAt())
         ));
     }
-
-    private List<String> asString(final List<CategoryID> categories) {
-        return categories.stream().map(anId -> anId.getValue()).toList();
-    }
 }

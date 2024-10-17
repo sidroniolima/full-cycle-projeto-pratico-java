@@ -20,7 +20,7 @@ import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.verify;
 
 @IntegrationTest
-public class ListCastMemberUseCaseIT {
+public class ListCastMembersUseCaseIT {
 
     @Autowired
     private ListCastMemberUseCase useCase;

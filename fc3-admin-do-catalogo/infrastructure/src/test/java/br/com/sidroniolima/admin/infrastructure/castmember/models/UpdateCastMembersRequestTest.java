@@ -13,7 +13,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @JacksonTest
-class UpdateCastMemberRequestTest {
+class UpdateCastMembersRequestTest {
 
     @Autowired
     private JacksonTester<UpdateCastMemberRequest> json;
