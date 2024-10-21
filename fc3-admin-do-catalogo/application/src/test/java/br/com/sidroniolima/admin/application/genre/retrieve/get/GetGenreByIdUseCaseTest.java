@@ -82,10 +82,4 @@ public class GetGenreByIdUseCaseTest extends UseCaseTest {
         Mockito.verify(genreGateway, times(1)).findById(any());
     }
 
-    private List<String> asString(List<CategoryID> ids) {
-        return ids
-                .stream()
-                .map(CategoryID::getValue)
-                .toList();
-    }
 }

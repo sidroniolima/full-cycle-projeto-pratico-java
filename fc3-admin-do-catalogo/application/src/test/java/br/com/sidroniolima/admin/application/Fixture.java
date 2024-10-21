@@ -91,14 +91,8 @@ public final class Fixture {
             );
         }
 
-        public static String rating() {
-            final var values = Arrays.
-                    stream(Rating.values())
-                    .map(Rating::getName)
-                    .toList()
-                    .toArray(new String[0]);
-
-            return FAKER.options().option(values);
+        public static Rating rating() {
+            return FAKER.options().option(Rating.values());
         }
     }
 

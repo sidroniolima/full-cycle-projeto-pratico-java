@@ -27,7 +27,7 @@ public class DeleteGenreUseCaseIT {
     private GenreRepository genreRepository;
 
     @Test
-    public void givenAValidGenreId_whenCallsDeleteGenre_shoudDeleteGenre() {
+    public void givenAValidGenreId_whenCallsDeleteGenre_shouldDeleteGenre() {
         // given
         final var aGenre = genreGateway.create(Genre.newGenre("Ação", true));
         final var expectedId = aGenre.getId();
@@ -42,7 +42,7 @@ public class DeleteGenreUseCaseIT {
     }
 
     @Test
-    public void givenAInvalidGenreId_whenCallsDeleteGenre_shoudDeleteGenre() {
+    public void givenAInvalidGenreId_whenCallsDeleteGenre_shouldDeleteGenre() {
         // given
         genreGateway.create(Genre.newGenre("Ação", true));
 

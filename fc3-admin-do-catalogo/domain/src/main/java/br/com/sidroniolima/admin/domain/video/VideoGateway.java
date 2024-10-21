@@ -7,9 +7,9 @@ import br.com.sidroniolima.admin.domain.pagination.SearchQuery;
 import java.util.Optional;
 
 public interface VideoGateway {
-    Video create(Video aGenre);
+    Video create(Video aVideo);
     void deleteById(VideoID anId);
-    Optional<Genre> findById(VideoID anId);
-    Video update(Video aGenre);
+    Optional<Video> findById(VideoID anId);
+    Video update(Video aVideo);
     Pagination<Video> findAll(VideoSearchQuery aQuery);
 }
