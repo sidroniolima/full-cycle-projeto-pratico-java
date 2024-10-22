@@ -813,6 +813,5 @@ class CreateVideoUseCaseTest extends UseCaseTest {
             final var resource = t.getArgument(1, Resource.class);
             return ImageMedia.with(UUID.randomUUID().toString(), resource.name(), "/img");
         });
-
     }
 }

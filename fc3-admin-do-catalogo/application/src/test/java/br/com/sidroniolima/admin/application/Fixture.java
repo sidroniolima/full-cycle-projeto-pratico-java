@@ -6,9 +6,11 @@ import br.com.sidroniolima.admin.domain.category.Category;
 import br.com.sidroniolima.admin.domain.genre.Genre;
 import br.com.sidroniolima.admin.domain.video.Rating;
 import br.com.sidroniolima.admin.domain.video.Resource;
+import br.com.sidroniolima.admin.domain.video.Video;
 import com.github.javafaker.Faker;
 
-import java.util.Arrays;
+import java.time.Year;
+import java.util.Set;
 
 import static io.vavr.API.*;
 
@@ -36,6 +38,21 @@ public final class Fixture {
                 "Title 1",
                 "Title 2",
                 "Title 3"
+        );
+    }
+
+    public static Video video() {
+        return Video.newVideo(
+                Fixture.title(),
+                Videos.description(),
+                Year.of(Fixture.year()),
+                Fixture.duration(),
+                Fixture.bool(),
+                Fixture.bool(),
+                Videos.rating(),
+                Set.of(Categories.aulas().getId()),
+                Set.of(Genres.tech().getId()),
+                Set.of(CastMembers.wesley().getId())
         );
     }
 
@@ -70,6 +87,21 @@ public final class Fixture {
     }
 
     public static final class Videos {
+
+        public static Video systemDesign() {
+            return Video.newVideo(
+                    Fixture.title(),
+                    description(),
+                    Year.of(Fixture.year()),
+                    Fixture.duration(),
+                    Fixture.bool(),
+                    Fixture.bool(),
+                    rating(),
+                    Set.of(Categories.aulas().getId()),
+                    Set.of(Genres.tech().getId()),
+                    Set.of(CastMembers.wesley().getId())
+            );
+        }
 
         public static Resource resource(final Resource.Type type) {
             final String contentType = Match(type).of(
