@@ -24,7 +24,10 @@ public class AudioVideoMediaJpaEntity {
     @Enumerated(EnumType.STRING)
     private MediaStatus status;
 
-    public AudioVideoMediaJpaEntity(
+    public AudioVideoMediaJpaEntity() {
+    }
+
+    private AudioVideoMediaJpaEntity(
             final String id,
             final String name,
             final String filePath,

@@ -23,7 +23,7 @@ public class ImageMediaJpaEntity {
     public ImageMediaJpaEntity() {
     }
 
-    public ImageMediaJpaEntity(String id, String name, String filePath) {
+    private ImageMediaJpaEntity(String id, String name, String filePath) {
         this.id = id;
         this.name = name;
         this.filePath = filePath;
