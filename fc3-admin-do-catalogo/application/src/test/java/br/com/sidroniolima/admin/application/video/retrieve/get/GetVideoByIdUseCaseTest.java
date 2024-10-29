@@ -4,6 +4,7 @@ import br.com.sidroniolima.admin.application.Fixture;
 import br.com.sidroniolima.admin.application.UseCaseTest;
 import br.com.sidroniolima.admin.application.video.retreive.get.DefaultGetVideoByIdUseCase;
 import br.com.sidroniolima.admin.domain.exceptions.NotFoundException;
+import br.com.sidroniolima.admin.domain.utils.IdUtils;
 import br.com.sidroniolima.admin.domain.video.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -122,7 +123,7 @@ public class GetVideoByIdUseCaseTest extends UseCaseTest {
     }
 
     private AudioVideoMedia audioVideo(final Resource.Type type) {
-        final var checksum = UUID.randomUUID().toString();
+        final var checksum = IdUtils.uuid();
         return AudioVideoMedia.with(
                 checksum,
                 type.name().toLowerCase(),
@@ -133,7 +134,7 @@ public class GetVideoByIdUseCaseTest extends UseCaseTest {
     }
 
     private ImageMedia imageMedia(final Resource.Type type) {
-        final var checksum = UUID.randomUUID().toString();
+        final var checksum = IdUtils.uuid();
         return ImageMedia.with(
                 checksum,
                 type.name().toLowerCase(),

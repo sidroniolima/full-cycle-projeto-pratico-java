@@ -9,6 +9,7 @@ import br.com.sidroniolima.admin.domain.category.CategoryID;
 import br.com.sidroniolima.admin.domain.exceptions.NotificationException;
 import br.com.sidroniolima.admin.domain.genre.GenreGateway;
 import br.com.sidroniolima.admin.domain.genre.GenreID;
+import br.com.sidroniolima.admin.domain.utils.IdUtils;
 import br.com.sidroniolima.admin.domain.video.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -800,7 +801,7 @@ class CreateVideoUseCaseTest extends UseCaseTest {
         when(mediaResourceGateway.storeAudioVideo(any(), any())).thenAnswer(t -> {
             final var resource = t.getArgument(1, Resource.class);
             return AudioVideoMedia.with(
-                    UUID.randomUUID().toString(),
+                    IdUtils.uuid(),
                     resource.name(),
                     "/img",
                     "",
@@ -811,7 +812,7 @@ class CreateVideoUseCaseTest extends UseCaseTest {
     private void mockImageMedia() {
         when(mediaResourceGateway.storeImage(any(), any())).thenAnswer(t -> {
             final var resource = t.getArgument(1, Resource.class);
-            return ImageMedia.with(UUID.randomUUID().toString(), resource.name(), "/img");
+            return ImageMedia.with(IdUtils.uuid(), resource.name(), "/img");
         });
     }
 }

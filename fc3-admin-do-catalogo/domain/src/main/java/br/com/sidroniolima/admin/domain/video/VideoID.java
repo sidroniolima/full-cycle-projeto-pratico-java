@@ -1,6 +1,7 @@
 package br.com.sidroniolima.admin.domain.video;
 
 import br.com.sidroniolima.admin.domain.Identifier;
+import br.com.sidroniolima.admin.domain.utils.IdUtils;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -16,12 +17,8 @@ public class VideoID extends Identifier {
         return new VideoID(anId.toLowerCase());
     }
 
-    public static VideoID from(final UUID anId) {
-        return VideoID.from(anId.toString());
-    }
-
     public static VideoID unique() {
-        return VideoID.from(UUID.randomUUID());
+        return VideoID.from(IdUtils.uuid());
     }
 
     @Override

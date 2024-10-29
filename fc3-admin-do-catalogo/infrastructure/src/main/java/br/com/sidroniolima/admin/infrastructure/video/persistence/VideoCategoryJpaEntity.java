@@ -10,7 +10,7 @@ import java.util.UUID;
 @Entity(name = "VideoCategory")
 public class VideoCategoryJpaEntity {
 
-    @Embedded
+    @EmbeddedId
     private VideoCategoryID id;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -25,8 +25,8 @@ public class VideoCategoryJpaEntity {
         this.video = video;
     }
 
-    public static VideoCategoryJpaEntity from(final VideoJpaEntity video, final CategoryID category) {
-        return new VideoCategoryJpaEntity(VideoCategoryID.from(video.getId(), UUID.fromString(category.getValue())), video);
+    public static VideoCategoryJpaEntity from(final VideoJpaEntity video, final CategoryID categoryId) {
+        return new VideoCategoryJpaEntity(VideoCategoryID.from(video.getId(), categoryId.getValue()), video);
     }
 
     @Override
