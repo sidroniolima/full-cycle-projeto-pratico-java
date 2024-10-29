@@ -10,10 +10,14 @@ import javax.persistence.*;
 public class AudioVideoMediaJpaEntity {
 
     @Id
+    @Column(name = "id", nullable = false)
     private String id;
 
     @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "checksum", nullable = false)
+    private String checksum;
 
     @Column(name = "file_path", nullable = false)
     private String filePath;

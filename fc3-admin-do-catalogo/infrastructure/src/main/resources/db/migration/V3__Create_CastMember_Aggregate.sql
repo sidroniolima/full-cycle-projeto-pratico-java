@@ -1,4 +1,4 @@
-CREATE TABLE cast_members(
+CREATE TABLE cast_members (
     id CHAR(32) NOT NULL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     type CHAR(32) NOT NULL,
