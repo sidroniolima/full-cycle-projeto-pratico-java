@@ -1,7 +1,7 @@
 package br.com.sidroniolima.admin.application.castmember.update;
 
-import br.com.sidroniolima.admin.Fixture;
 import br.com.sidroniolima.admin.IntegrationTest;
+import br.com.sidroniolima.admin.domain.Fixture;
 import br.com.sidroniolima.admin.domain.castmember.CastMember;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberGateway;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberID;
@@ -15,10 +15,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.SpyBean;
 
-import java.util.Objects;
-import java.util.Optional;
-
-import static org.mockito.AdditionalAnswers.returnsFirstArg;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 

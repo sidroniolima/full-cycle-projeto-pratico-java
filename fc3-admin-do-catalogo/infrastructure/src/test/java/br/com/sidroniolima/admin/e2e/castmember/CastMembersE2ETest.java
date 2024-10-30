@@ -1,7 +1,7 @@
 package br.com.sidroniolima.admin.e2e.castmember;
 
 import br.com.sidroniolima.admin.E2ETest;
-import br.com.sidroniolima.admin.Fixture;
+import br.com.sidroniolima.admin.domain.Fixture;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberID;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberType;
 import br.com.sidroniolima.admin.e2e.MockDsl;
@@ -54,7 +54,7 @@ public class CastMembersE2ETest implements MockDsl {
         Assertions.assertEquals(0, castMemberRepository.count());
 
         final var expectedName = Fixture.name();
-        final var expectedType = Fixture.CastMember.type();
+        final var expectedType = Fixture.CastMembers.type();
 
         final var actualMemberId = givenACastMember(expectedName, expectedType);
 
@@ -75,7 +75,7 @@ public class CastMembersE2ETest implements MockDsl {
         Assertions.assertEquals(0, castMemberRepository.count());
 
         final String expectedName = null;
-        final var expectedType = Fixture.CastMember.type();
+        final var expectedType = Fixture.CastMembers.type();
         final var expectedErrorMessage = "'name' should not be null";
 
         // then

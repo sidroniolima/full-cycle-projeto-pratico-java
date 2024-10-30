@@ -1,4 +1,4 @@
-package br.com.sidroniolima.admin.application;
+package br.com.sidroniolima.admin.domain;
 
 import br.com.sidroniolima.admin.domain.castmember.CastMember;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberType;

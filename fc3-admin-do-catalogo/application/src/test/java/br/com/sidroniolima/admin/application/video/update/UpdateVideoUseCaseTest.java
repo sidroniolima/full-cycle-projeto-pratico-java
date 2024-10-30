@@ -1,7 +1,7 @@
 package br.com.sidroniolima.admin.application.video.update;
 
-import br.com.sidroniolima.admin.application.Fixture;
 import br.com.sidroniolima.admin.application.UseCaseTest;
+import br.com.sidroniolima.admin.domain.Fixture;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberGateway;
 import br.com.sidroniolima.admin.domain.category.CategoryGateway;
 import br.com.sidroniolima.admin.domain.category.CategoryID;

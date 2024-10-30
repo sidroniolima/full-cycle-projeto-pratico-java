@@ -1,7 +1,7 @@
 package br.com.sidroniolima.admin.application.castmember.delete;
 
-import br.com.sidroniolima.admin.application.Fixture;
 import br.com.sidroniolima.admin.application.UseCaseTest;
+import br.com.sidroniolima.admin.domain.Fixture;
 import br.com.sidroniolima.admin.domain.castmember.CastMember;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberGateway;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberID;

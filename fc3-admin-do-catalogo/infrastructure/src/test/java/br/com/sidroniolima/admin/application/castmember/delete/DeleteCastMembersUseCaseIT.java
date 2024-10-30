@@ -1,8 +1,7 @@
 package br.com.sidroniolima.admin.application.castmember.delete;
 
-import br.com.sidroniolima.admin.Fixture;
 import br.com.sidroniolima.admin.IntegrationTest;
-import br.com.sidroniolima.admin.application.castmember.retrieve.get.DefaultGetCastMemberByIdUseCase;
+import br.com.sidroniolima.admin.domain.Fixture;
 import br.com.sidroniolima.admin.domain.castmember.CastMember;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberGateway;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberID;
@@ -31,9 +30,9 @@ public class DeleteCastMembersUseCaseIT {
     @Test
     public void givenAValidId_whenCallsDeleteCastMember_shouldDeleteId() {
         // given
-        final var aMemberOne = CastMember.newMember(Fixture.name(), Fixture.CastMember.type());
+        final var aMemberOne = CastMember.newMember(Fixture.name(), Fixture.CastMembers.type());
         final var expectedId = aMemberOne.getId();
-        final var aMemberTwo = CastMember.newMember(Fixture.name(), Fixture.CastMember.type());
+        final var aMemberTwo = CastMember.newMember(Fixture.name(), Fixture.CastMembers.type());
 
         this.castMemberRepository.saveAndFlush(CastMemberJpaEntity.from(aMemberOne));
         this.castMemberRepository.saveAndFlush(CastMemberJpaEntity.from(aMemberTwo));
@@ -58,7 +57,7 @@ public class DeleteCastMembersUseCaseIT {
 
         this.castMemberRepository.saveAndFlush(
                 CastMemberJpaEntity.from(
-                        CastMember.newMember(Fixture.name(), Fixture.CastMember.type())
+                        CastMember.newMember(Fixture.name(), Fixture.CastMembers.type())
                 )
         );
 
@@ -76,7 +75,7 @@ public class DeleteCastMembersUseCaseIT {
     @Test
     public void givenAValidId_whenCallsDeleteCastMemberAndGatewayThrowsException_shouldReceiveException() {
         // given
-        final var aMember = CastMember.newMember(Fixture.name(), Fixture.CastMember.type());
+        final var aMember = CastMember.newMember(Fixture.name(), Fixture.CastMembers.type());
         final var expectedId = aMember.getId();
 
         this.castMemberRepository.saveAndFlush(CastMemberJpaEntity.from(aMember));

@@ -1,12 +1,13 @@
 package br.com.sidroniolima.admin.application.video.retrieve.list;
 
-import br.com.sidroniolima.admin.application.Fixture;
 import br.com.sidroniolima.admin.application.UseCaseTest;
 import br.com.sidroniolima.admin.application.video.retreive.list.DefaultListVideoUseCase;
 import br.com.sidroniolima.admin.application.video.retreive.list.VideoListOutput;
+import br.com.sidroniolima.admin.domain.Fixture;
 import br.com.sidroniolima.admin.domain.pagination.Pagination;
 import br.com.sidroniolima.admin.domain.video.Video;
 import br.com.sidroniolima.admin.domain.video.VideoGateway;
+import br.com.sidroniolima.admin.domain.video.VideoPreview;
 import br.com.sidroniolima.admin.domain.video.VideoSearchQuery;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,6 +16,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.util.List;
+import java.util.Set;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
@@ -37,8 +39,8 @@ public class ListVideoUseCaseTest extends UseCaseTest {
     public void givenAValidQuery_whenCallsListVideo_shouldReturnVideos() {
         // given
         final var videos = List.of(
-            Fixture.video(),
-            Fixture.video()
+            new VideoPreview(Fixture.video()),
+                new VideoPreview(Fixture.video())
         );
 
         final var expectedPage = 0;
@@ -61,11 +63,16 @@ public class ListVideoUseCaseTest extends UseCaseTest {
 
         when(videoGateway.findAll(any())).thenReturn(expectedPagination);
 
-        final var aQuery = new VideoSearchQuery(expectedPage,
+        final var aQuery = new VideoSearchQuery(
+                expectedPage,
                 expectedPerPage,
                 expectedTerms,
                 expectedSort,
-                expectedDirection);
+                expectedDirection,
+                Set.of(),
+                Set.of(),
+                Set.of()
+                );
 
         // when
         final var actualOutput = useCase.execute(aQuery);
@@ -82,6 +89,7 @@ public class ListVideoUseCaseTest extends UseCaseTest {
     @Test
     public void givenAValidQuery_whenCallsListVideoAndResultIsEmpty_shouldReturnGenres() {
         // given
+        final var videos = List.<VideoPreview>of();
 
         final var expectedPage = 0;
         final var expectedPerPage = 10;
@@ -96,7 +104,7 @@ public class ListVideoUseCaseTest extends UseCaseTest {
                 expectedPage,
                 expectedPerPage,
                 expectedTotal,
-                List.<Video>of()
+                videos
         );
 
         Mockito.when(videoGateway.findAll(any())).thenReturn(expectedPagination);
@@ -105,7 +113,10 @@ public class ListVideoUseCaseTest extends UseCaseTest {
                 expectedPerPage,
                 expectedTerms,
                 expectedSort,
-                expectedDirection);
+                expectedDirection,
+                Set.of(),
+                Set.of(),
+                Set.of());
 
         // when
         final var actualOutput = useCase.execute(aQuery);
@@ -137,7 +148,10 @@ public class ListVideoUseCaseTest extends UseCaseTest {
                 expectedPerPage,
                 expectedTerms,
                 expectedSort,
-                expectedDirection);
+                expectedDirection,
+                Set.of(),
+                Set.of(),
+                Set.of());
 
         // when
         final var actualOutput = Assertions.assertThrows(IllegalStateException.class,

@@ -1,7 +1,7 @@
 package br.com.sidroniolima.admin.application.castmember.retrieve.get;
 
-import br.com.sidroniolima.admin.Fixture;
 import br.com.sidroniolima.admin.IntegrationTest;
+import br.com.sidroniolima.admin.domain.Fixture;
 import br.com.sidroniolima.admin.domain.castmember.CastMember;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberGateway;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberID;
@@ -32,7 +32,7 @@ public class GetCastMembersByIdUseCaseIT {
     public void givenAValidId_whenCallsGetCastMember_shouldReturnId() {
         // given
         final var expectedName = Fixture.name();
-        final var expectedType = Fixture.CastMember.type();
+        final var expectedType = Fixture.CastMembers.type();
 
         final var aMember = CastMember.newMember(expectedName, expectedType);
 

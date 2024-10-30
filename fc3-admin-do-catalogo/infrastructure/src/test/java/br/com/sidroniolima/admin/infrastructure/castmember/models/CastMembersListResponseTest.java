@@ -1,8 +1,6 @@
 package br.com.sidroniolima.admin.infrastructure.castmember.models;
 
-import br.com.sidroniolima.admin.Fixture;
-import br.com.sidroniolima.admin.infrastructure.genre.models.GenreListResponse;
-import br.com.sidroniolima.admin.infrastructure.genre.models.UpdateGenreRequest;
+import br.com.sidroniolima.admin.domain.Fixture;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +20,7 @@ class CastMembersListResponseTest {
     public void testMarshall() throws IOException {
         final var expectedId = "123";
         final var expectedName = Fixture.name();
-        final var expectedType = Fixture.CastMember.type().name();
+        final var expectedType = Fixture.CastMembers.type().name();
         final var expectedCreatedAt = Instant.now().toString();
 
         final  var response = new CastMemberListResponse(

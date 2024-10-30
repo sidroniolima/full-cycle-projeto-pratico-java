@@ -1,8 +1,8 @@
 package br.com.sidroniolima.admin.application.video.retrieve.get;
 
-import br.com.sidroniolima.admin.application.Fixture;
 import br.com.sidroniolima.admin.application.UseCaseTest;
 import br.com.sidroniolima.admin.application.video.retreive.get.DefaultGetVideoByIdUseCase;
+import br.com.sidroniolima.admin.domain.Fixture;
 import br.com.sidroniolima.admin.domain.exceptions.NotFoundException;
 import br.com.sidroniolima.admin.domain.utils.IdUtils;
 import br.com.sidroniolima.admin.domain.video.*;
@@ -15,7 +15,6 @@ import java.time.Year;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.UUID;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;

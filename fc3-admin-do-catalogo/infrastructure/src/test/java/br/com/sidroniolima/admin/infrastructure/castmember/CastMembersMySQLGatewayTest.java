@@ -15,8 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-import static br.com.sidroniolima.admin.Fixture.CastMember.type;
-import static br.com.sidroniolima.admin.Fixture.name;
+import static br.com.sidroniolima.admin.domain.Fixture.CastMembers.type;
+import static br.com.sidroniolima.admin.domain.Fixture.name;
 
 @MySQLGatewayTest
 public class CastMembersMySQLGatewayTest {

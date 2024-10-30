@@ -1,6 +1,6 @@
 package br.com.sidroniolima.admin.infrastructure.castmember.models;
 
-import br.com.sidroniolima.admin.Fixture;
+import br.com.sidroniolima.admin.domain.Fixture;
 import br.com.sidroniolima.admin.JacksonTest;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -21,7 +21,7 @@ class UpdateCastMembersRequestTest {
     @Test
     public void testUnmarshall() throws IOException {
         final var expectedName = Fixture.name();
-        final var expectedType = Fixture.CastMember.type();
+        final var expectedType = Fixture.CastMembers.type();
 
         final var json = """
                 {
