@@ -10,6 +10,7 @@ import br.com.sidroniolima.admin.infrastructure.video.persistence.VideoRepositor
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Objects;
@@ -20,6 +21,7 @@ import java.util.stream.Collectors;
 import static br.com.sidroniolima.admin.domain.utils.CollectionUtils.mapTo;
 import static br.com.sidroniolima.admin.domain.utils.CollectionUtils.nullIfEmpty;
 
+@Component
 public class DefaultVideoGateway implements VideoGateway {
 
     private final VideoRepository videoRepository;

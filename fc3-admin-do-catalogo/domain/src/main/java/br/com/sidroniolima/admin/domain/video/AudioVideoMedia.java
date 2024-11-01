@@ -29,6 +29,14 @@ public class AudioVideoMedia extends ValueObject {
     public static AudioVideoMedia with(
             final String checksum,
             final String name,
+            final String rawLocation
+    ) {
+        return new AudioVideoMedia(checksum, name, rawLocation, "", MediaStatus.PENDING);
+    }
+
+    public static AudioVideoMedia with(
+            final String checksum,
+            final String name,
             final String rawLocation,
             final String encodedLocation,
             final MediaStatus status
