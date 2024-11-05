@@ -3,6 +3,7 @@ package br.com.sidroniolima.admin.infrastructure.video.persistence;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberID;
 import br.com.sidroniolima.admin.domain.category.CategoryID;
 import br.com.sidroniolima.admin.domain.genre.GenreID;
+import br.com.sidroniolima.admin.domain.utils.CollectionUtils;
 import br.com.sidroniolima.admin.domain.video.Rating;
 import br.com.sidroniolima.admin.domain.video.Video;
 import br.com.sidroniolima.admin.domain.video.VideoID;
@@ -10,6 +11,7 @@ import br.com.sidroniolima.admin.domain.video.VideoID;
 import javax.persistence.*;
 import java.time.Instant;
 import java.time.Year;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -351,5 +353,17 @@ public class VideoJpaEntity {
 
     public void setCastMembers(Set<VideoCastMemberJpaEntity> castMembers) {
         this.castMembers = castMembers;
+    }
+
+    public Set<CategoryID> getCategoriesID() {
+        return CollectionUtils.mapTo(getCategories(), it -> CategoryID.from(it.getId().getCategoryId()));
+    }
+
+    public Set<GenreID> getGenresID() {
+        return CollectionUtils.mapTo(getGenres(), it -> GenreID.from(it.getId().getGenreId()));
+    }
+
+    public Set<CastMemberID> getCastMembersID() {
+        return CollectionUtils.mapTo(getCastMembers(), it -> CastMemberID.from(it.getId().getCastMemberId()));
     }
 }

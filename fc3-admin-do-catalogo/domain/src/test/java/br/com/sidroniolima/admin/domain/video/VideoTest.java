@@ -164,7 +164,7 @@ public class VideoTest {
         );
 
         final var aVideoMedia = AudioVideoMedia
-                .with("abc", "video.mp4", "/123/videos", "", MediaStatus.PENDING);
+                .with("abc", "video.mp4", "/123/videos");
 
         // when
         final var actualVideo = Video.with(aVideo).setVideo(aVideoMedia);
@@ -224,7 +224,7 @@ public class VideoTest {
         );
 
         final var aTrailerMedia = AudioVideoMedia
-                .with("abc", "trailer.mp4", "/123/videos", "", MediaStatus.PENDING);
+                .with("abc", "trailer.mp4", "/123/videos");
 
         // when
         final var actualVideo = Video.with(aVideo).setTrailer(aTrailerMedia);
@@ -283,11 +283,11 @@ public class VideoTest {
                 expectedMembers
         );
 
-        final var aBunnerMedia = ImageMedia
+        final var aBannerMedia = ImageMedia
                 .with("abc", "trailer.mp4", "/123/videos");
 
         // when
-        final var actualVideo = Video.with(aVideo).setBanner(aBunnerMedia);
+        final var actualVideo = Video.with(aVideo).setBanner(aBannerMedia);
 
         // then
         Assertions.assertNotNull(actualVideo);
@@ -307,7 +307,7 @@ public class VideoTest {
         Assertions.assertEquals(expectedMembers, actualVideo.getCastMembers());
         Assertions.assertTrue(actualVideo.getVideo().isEmpty());
         Assertions.assertTrue(actualVideo.getTrailer().isEmpty());
-        Assertions.assertEquals(aBunnerMedia, actualVideo.getBanner().get());
+        Assertions.assertEquals(aBannerMedia, actualVideo.getBanner().get());
         Assertions.assertTrue(actualVideo.getTrailer().isEmpty());
         Assertions.assertTrue(actualVideo.getThumbnail().isEmpty());
         Assertions.assertTrue(actualVideo.getThumbnailHalf().isEmpty());

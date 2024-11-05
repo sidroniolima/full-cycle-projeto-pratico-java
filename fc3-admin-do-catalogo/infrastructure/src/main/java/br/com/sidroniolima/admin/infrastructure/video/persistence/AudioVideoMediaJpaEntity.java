@@ -26,6 +26,7 @@ public class AudioVideoMediaJpaEntity {
     private String encodedPath;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "media_status", nullable = false)
     private MediaStatus status;
 
     public AudioVideoMediaJpaEntity() {
@@ -33,11 +34,13 @@ public class AudioVideoMediaJpaEntity {
 
     private AudioVideoMediaJpaEntity(
             final String id,
+            final String checksum,
             final String name,
             final String filePath,
             final String encodedPath,
             final MediaStatus status) {
         this.id = id;
+        this.checksum = checksum;
         this.name = name;
         this.filePath = filePath;
         this.encodedPath = encodedPath;
@@ -46,6 +49,7 @@ public class AudioVideoMediaJpaEntity {
 
     public static AudioVideoMediaJpaEntity from(final AudioVideoMedia media) {
         return new AudioVideoMediaJpaEntity(
+                media.id(),
                 media.checksum(),
                 media.name(),
                 media.rawLocation(),
@@ -57,6 +61,7 @@ public class AudioVideoMediaJpaEntity {
     public AudioVideoMedia toDomain() {
         return AudioVideoMedia.with(
                 getId(),
+                getChecksum(),
                 getName(),
                 getFilePath(),
                 getEncodedPath(),
@@ -102,5 +107,13 @@ public class AudioVideoMediaJpaEntity {
 
     public void setStatus(MediaStatus status) {
         this.status = status;
+    }
+
+    public String getChecksum() {
+        return checksum;
+    }
+
+    public void setChecksum(String checksum) {
+        this.checksum = checksum;
     }
 }

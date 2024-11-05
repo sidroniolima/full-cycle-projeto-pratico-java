@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Objects;
 import java.util.UUID;
 
-@Table(name= "videos_category")
+@Table(name= "videos_categories")
 @Entity(name = "VideoCategory")
 public class VideoCategoryJpaEntity {
 
