@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.StreamSupport;
 
 @Component
 public class GenreMySQLGateway implements GenreGateway {
@@ -61,7 +62,7 @@ public class GenreMySQLGateway implements GenreGateway {
 
         final var where = Optional.ofNullable(aQuery.terms())
                 .filter(str -> !str.isBlank())
-                .map(this::assembleSpeceification)
+                .map(this::assembleSpecification)
                 .orElse(null);
 
         final var results = this.genreRepository.findAll(where, page);
@@ -75,11 +76,17 @@ public class GenreMySQLGateway implements GenreGateway {
     }
 
     @Override
-    public List<GenreID> existsByIds(Iterable<GenreID> ids) {
-        throw new UnsupportedOperationException();
+    public List<GenreID> existsByIds(final Iterable<GenreID> genresIDs) {
+        final var ids = StreamSupport.stream(genresIDs.spliterator(), false)
+                .map(GenreID::getValue)
+                .toList();
+
+        return this.genreRepository.existsByIds(ids).stream()
+                .map(GenreID::from)
+                .toList();
     }
 
-    private Specification<GenreJpaEntity> assembleSpeceification(final String terms) {
+    private Specification<GenreJpaEntity> assembleSpecification(final String terms) {
         return SpecificationUtils.like("name", terms);
     }
 

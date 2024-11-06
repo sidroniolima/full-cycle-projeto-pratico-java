@@ -2,21 +2,17 @@ package br.com.sidroniolima.admin.infrastructure.video;
 
 import br.com.sidroniolima.admin.domain.Identifier;
 import br.com.sidroniolima.admin.domain.pagination.Pagination;
-import br.com.sidroniolima.admin.domain.utils.CollectionUtils;
 import br.com.sidroniolima.admin.domain.video.*;
 import br.com.sidroniolima.admin.infrastructure.utils.SqlUtils;
 import br.com.sidroniolima.admin.infrastructure.video.persistence.VideoJpaEntity;
 import br.com.sidroniolima.admin.infrastructure.video.persistence.VideoRepository;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Objects;
 import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import static br.com.sidroniolima.admin.domain.utils.CollectionUtils.mapTo;
 import static br.com.sidroniolima.admin.domain.utils.CollectionUtils.nullIfEmpty;
@@ -66,7 +62,7 @@ public class DefaultVideoGateway implements VideoGateway {
         );
 
         final var actualPage = this.videoRepository.findAll(
-                SqlUtils.like(aQuery.terms()),
+                SqlUtils.like(SqlUtils.upper(aQuery.terms())),
                 nullIfEmpty(mapTo(aQuery.castMembers(), Identifier::getValue)),
                 nullIfEmpty(mapTo(aQuery.categories(), Identifier::getValue)),
                 nullIfEmpty(mapTo(aQuery.genres(), Identifier::getValue)),

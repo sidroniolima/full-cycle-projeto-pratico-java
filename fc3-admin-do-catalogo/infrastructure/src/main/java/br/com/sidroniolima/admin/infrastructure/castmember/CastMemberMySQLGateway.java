@@ -3,6 +3,7 @@ package br.com.sidroniolima.admin.infrastructure.castmember;
 import br.com.sidroniolima.admin.domain.castmember.CastMember;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberGateway;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberID;
+import br.com.sidroniolima.admin.domain.genre.GenreID;
 import br.com.sidroniolima.admin.domain.pagination.Pagination;
 import br.com.sidroniolima.admin.domain.pagination.SearchQuery;
 import br.com.sidroniolima.admin.infrastructure.castmember.persistence.CastMemberJpaEntity;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.StreamSupport;
 
 @Component
 public class CastMemberMySQLGateway implements CastMemberGateway {
@@ -75,8 +77,14 @@ public class CastMemberMySQLGateway implements CastMemberGateway {
     }
 
     @Override
-    public List<CastMemberID> existsByIds(final Iterable<CastMemberID> ids) {
-        throw new UnsupportedOperationException();
+    public List<CastMemberID> existsByIds(final Iterable<CastMemberID> castMembersIDs) {
+        final var ids = StreamSupport.stream(castMembersIDs.spliterator(), false)
+                .map(CastMemberID::getValue)
+                .toList();
+
+        return this.castMemberRepository.existsByIds(ids).stream()
+                .map(CastMemberID::from)
+                .toList();
     }
 
     private CastMember save(CastMember aCastMember) {
