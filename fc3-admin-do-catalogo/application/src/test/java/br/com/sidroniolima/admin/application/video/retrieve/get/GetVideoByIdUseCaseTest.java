@@ -4,6 +4,7 @@ import br.com.sidroniolima.admin.application.UseCaseTest;
 import br.com.sidroniolima.admin.application.video.retreive.get.DefaultGetVideoByIdUseCase;
 import br.com.sidroniolima.admin.domain.Fixture;
 import br.com.sidroniolima.admin.domain.exceptions.NotFoundException;
+import br.com.sidroniolima.admin.domain.resource.Resource;
 import br.com.sidroniolima.admin.domain.utils.IdUtils;
 import br.com.sidroniolima.admin.domain.video.*;
 import org.junit.jupiter.api.Assertions;
@@ -16,6 +17,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+import static br.com.sidroniolima.admin.domain.Fixture.Videos.audioVideo;
+import static br.com.sidroniolima.admin.domain.Fixture.Videos.imageMedia;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -49,12 +52,11 @@ public class GetVideoByIdUseCaseTest extends UseCaseTest {
                 Fixture.CastMembers.sidronio().getId()
         );
 
-        final var expectedVideo = audioVideo(Resource.Type.VIDEO);
-        final var expectedTrailer = audioVideo(Resource.Type.TRAILER);
-        final var expectedBanner = imageMedia(Resource.Type.BANNER);
-        final var expectedThumb = imageMedia(Resource.Type.THUMBNAIL);
-        final var expectedThumbHalf = imageMedia(Resource.Type.THUMBNAIL_HALF);
-        ;
+        final var expectedVideo = audioVideo(VideoMediaType.VIDEO);
+        final var expectedTrailer = audioVideo(VideoMediaType.TRAILER);
+        final var expectedBanner = imageMedia(VideoMediaType.BANNER);
+        final var expectedThumb = imageMedia(VideoMediaType.THUMBNAIL);
+        final var expectedThumbHalf = imageMedia(VideoMediaType.THUMBNAIL_HALF);
 
         final var aVideo = Video.newVideo(
                         expectedTitle,
@@ -120,26 +122,4 @@ public class GetVideoByIdUseCaseTest extends UseCaseTest {
         Assertions.assertNotNull(actualError);
         Assertions.assertEquals(expectedErrorMessage, actualError.getMessage());
     }
-
-    private AudioVideoMedia audioVideo(final Resource.Type type) {
-        final var checksum = IdUtils.uuid();
-        return AudioVideoMedia.with(
-                IdUtils.uuid(),
-                IdUtils.uuid(),
-                type.name().toLowerCase(),
-                "/videos/" + checksum,
-                "",
-                MediaStatus.PENDING
-        );
-    }
-
-    private ImageMedia imageMedia(final Resource.Type type) {
-        final var checksum = IdUtils.uuid();
-        return ImageMedia.with(
-                checksum,
-                type.name().toLowerCase(),
-                "/images/" + checksum
-        );
-    }
-
 }

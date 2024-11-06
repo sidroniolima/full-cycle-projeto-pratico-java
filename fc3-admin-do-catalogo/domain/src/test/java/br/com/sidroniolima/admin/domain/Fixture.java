@@ -4,9 +4,9 @@ import br.com.sidroniolima.admin.domain.castmember.CastMember;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberType;
 import br.com.sidroniolima.admin.domain.category.Category;
 import br.com.sidroniolima.admin.domain.genre.Genre;
-import br.com.sidroniolima.admin.domain.video.Rating;
-import br.com.sidroniolima.admin.domain.video.Resource;
-import br.com.sidroniolima.admin.domain.video.Video;
+import br.com.sidroniolima.admin.domain.utils.IdUtils;
+import br.com.sidroniolima.admin.domain.video.*;
+import br.com.sidroniolima.admin.domain.resource.Resource;
 import com.github.javafaker.Faker;
 
 import java.time.Year;
@@ -103,17 +103,37 @@ public final class Fixture {
             );
         }
 
-        public static Resource resource(final Resource.Type type) {
+        public static Resource resource(final VideoMediaType type) {
             final String contentType = Match(type).of(
-                    Case($(List(Resource.Type.VIDEO, Resource.Type.TRAILER)::contains), "video/mp4"),
+                    Case($(List(VideoMediaType.VIDEO,VideoMediaType.TRAILER)::contains), "video/mp4"),
                     Case($(), "image/jpg")
             );
 
+            final String checksum = IdUtils.uuid();
             final byte[] content = "Content".getBytes();
 
-            return Resource.with(content, contentType, type.name().toLowerCase(), type);
+            return Resource.with(checksum, content, contentType, type.name().toLowerCase());
         }
 
+        public static AudioVideoMedia audioVideo(final VideoMediaType type) {
+            final var id = IdUtils.uuid();
+            final var name = type.name().toLowerCase() + "_" + id;
+            return AudioVideoMedia.with(
+                    id,
+                    name,
+                    "/raw/".concat(name)
+            );
+        }
+
+        public static ImageMedia imageMedia(final VideoMediaType type) {
+            final var id = IdUtils.uuid();
+            final var name = type.name().toLowerCase() + "_" + id;
+            return ImageMedia.with(
+                    id,
+                    name,
+                    "/raw/".concat(name)
+            );
+        }
 
         public static String description() {
             return FAKER.options().option(

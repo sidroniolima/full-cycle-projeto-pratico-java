@@ -5,7 +5,6 @@ import br.com.sidroniolima.admin.domain.castmember.CastMemberGateway;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberID;
 import br.com.sidroniolima.admin.domain.category.CategoryGateway;
 import br.com.sidroniolima.admin.domain.category.CategoryID;
-import br.com.sidroniolima.admin.domain.exceptions.DomainException;
 import br.com.sidroniolima.admin.domain.exceptions.InternalErrorException;
 import br.com.sidroniolima.admin.domain.exceptions.NotificationException;
 import br.com.sidroniolima.admin.domain.genre.GenreGateway;
@@ -13,10 +12,7 @@ import br.com.sidroniolima.admin.domain.genre.GenreID;
 import br.com.sidroniolima.admin.domain.validation.Error;
 import br.com.sidroniolima.admin.domain.validation.ValidationHandler;
 import br.com.sidroniolima.admin.domain.validation.handler.Notification;
-import br.com.sidroniolima.admin.domain.video.MediaResourceGateway;
-import br.com.sidroniolima.admin.domain.video.Rating;
-import br.com.sidroniolima.admin.domain.video.Video;
-import br.com.sidroniolima.admin.domain.video.VideoGateway;
+import br.com.sidroniolima.admin.domain.video.*;
 
 import java.time.Year;
 import java.util.ArrayList;
@@ -24,8 +20,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.function.Function;
-import java.util.function.Supplier;
 import java.util.stream.Collectors;
+
+import static br.com.sidroniolima.admin.domain.video.VideoMediaType.*;
 
 public class DefaultCreateVideoUseCase extends CreateVideoUseCase {
 
@@ -89,23 +86,23 @@ public class DefaultCreateVideoUseCase extends CreateVideoUseCase {
 
         try {
             final var aVideoMedia = aCommand.getVideo()
-                    .map(it -> this.mediaResourceGateway.storeAudioVideo(anId, it))
+                    .map(it -> this.mediaResourceGateway.storeAudioVideo(anId, VideoResource.with(it, VIDEO)))
                     .orElse(null);
 
             final var aTrailerMedia = aCommand.getTrailer()
-                    .map(it -> this.mediaResourceGateway.storeAudioVideo(anId, it))
+                    .map(it -> this.mediaResourceGateway.storeAudioVideo(anId, VideoResource.with(it, VIDEO)))
                     .orElse(null);
 
             final var aBannerMedia = aCommand.getBanner()
-                    .map(it -> this.mediaResourceGateway.storeImage(anId, it))
+                    .map(it -> this.mediaResourceGateway.storeImage(anId, VideoResource.with(it, BANNER)))
                     .orElse(null);
 
             final var aThumbnailMedia = aCommand.getThumbnail()
-                    .map(it -> this.mediaResourceGateway.storeImage(anId, it))
+                    .map(it -> this.mediaResourceGateway.storeImage(anId, VideoResource.with(it, THUMBNAIL)))
                     .orElse(null);
 
             final var aThumbHalfMedia = aCommand.getThumbnailHalf()
-                    .map(it -> this.mediaResourceGateway.storeImage(anId, it))
+                    .map(it -> this.mediaResourceGateway.storeImage(anId, VideoResource.with(it, THUMBNAIL_HALF)))
                     .orElse(null);
 
             return this.videoGateway.create(

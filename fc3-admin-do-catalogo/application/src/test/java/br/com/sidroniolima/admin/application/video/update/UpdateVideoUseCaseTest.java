@@ -6,6 +6,7 @@ import br.com.sidroniolima.admin.domain.castmember.CastMemberGateway;
 import br.com.sidroniolima.admin.domain.category.CategoryGateway;
 import br.com.sidroniolima.admin.domain.category.CategoryID;
 import br.com.sidroniolima.admin.domain.genre.GenreGateway;
+import br.com.sidroniolima.admin.domain.resource.Resource;
 import br.com.sidroniolima.admin.domain.utils.IdUtils;
 import br.com.sidroniolima.admin.domain.video.*;
 import org.junit.jupiter.api.Assertions;
@@ -64,11 +65,11 @@ public class UpdateVideoUseCaseTest extends UseCaseTest {
                 Fixture.CastMembers.wesley().getId(),
                 Fixture.CastMembers.sidronio().getId()
         );
-        final Resource expectedVideo = Fixture.Videos.resource(Resource.Type.VIDEO);
-        final Resource expectedTrailer = Fixture.Videos.resource(Resource.Type.TRAILER);
-        final Resource expectedBanner = Fixture.Videos.resource(Resource.Type.BANNER);
-        final Resource expectedThumb = Fixture.Videos.resource(Resource.Type.THUMBNAIL);
-        final Resource expectedThumbHalf = Fixture.Videos.resource(Resource.Type.THUMBNAIL_HALF);;
+        final Resource expectedVideo = Fixture.Videos.resource(VideoMediaType.VIDEO);
+        final Resource expectedTrailer = Fixture.Videos.resource(VideoMediaType.TRAILER);
+        final Resource expectedBanner = Fixture.Videos.resource(VideoMediaType.BANNER);
+        final Resource expectedThumb = Fixture.Videos.resource(VideoMediaType.THUMBNAIL);
+        final Resource expectedThumbHalf = Fixture.Videos.resource(VideoMediaType.THUMBNAIL_HALF);;
 
         final var aCommand = UpdateVideoCommand.with(
                 aVideo.getId().getValue(),
@@ -156,11 +157,11 @@ public class UpdateVideoUseCaseTest extends UseCaseTest {
                 Fixture.CastMembers.wesley().getId(),
                 Fixture.CastMembers.sidronio().getId()
         );
-        final Resource expectedVideo = Fixture.Videos.resource(Resource.Type.VIDEO);
-        final Resource expectedTrailer = Fixture.Videos.resource(Resource.Type.TRAILER);
-        final Resource expectedBanner = Fixture.Videos.resource(Resource.Type.BANNER);
-        final Resource expectedThumb = Fixture.Videos.resource(Resource.Type.THUMBNAIL);
-        final Resource expectedThumbHalf = Fixture.Videos.resource(Resource.Type.THUMBNAIL_HALF);;
+        final Resource expectedVideo = Fixture.Videos.resource(VideoMediaType.VIDEO);
+        final Resource expectedTrailer = Fixture.Videos.resource(VideoMediaType.TRAILER);
+        final Resource expectedBanner = Fixture.Videos.resource(VideoMediaType.BANNER);
+        final Resource expectedThumb = Fixture.Videos.resource(VideoMediaType.THUMBNAIL);
+        final Resource expectedThumbHalf = Fixture.Videos.resource(VideoMediaType.THUMBNAIL_HALF);;
 
         final var aCommand = UpdateVideoCommand.with(
                 expectedId.getValue(),
@@ -227,21 +228,19 @@ public class UpdateVideoUseCaseTest extends UseCaseTest {
 
     private void mockAudioVideoImage() {
         when(mediaResourceGateway.storeAudioVideo(any(), any())).thenAnswer(t -> {
-            final var resource = t.getArgument(1, Resource.class);
-            return AudioVideoMedia.with(
-                    IdUtils.uuid(),
-                    IdUtils.uuid(),
-                    resource.name(),
-                    "/img",
-                    "",
-                    MediaStatus.PENDING);
+            final var videoResource = t.getArgument(1, VideoResource.class);
+            final var resource = videoResource.resource();
+            final var name = resource.name();
+            return AudioVideoMedia.with(resource.checksum(), name, "/raw/".concat(name));
         });
     }
 
     private void mockImageMedia() {
         when(mediaResourceGateway.storeImage(any(), any())).thenAnswer(t -> {
-            final var resource = t.getArgument(1, Resource.class);
-            return ImageMedia.with(IdUtils.uuid(), resource.name(), "/img");
+            final var videoResource = t.getArgument(1, VideoResource.class);
+            final var resource = videoResource.resource();
+            final var name = resource.name();
+            return ImageMedia.with(resource.checksum(), name, "/raw/".concat(name));
         });
     }
 }

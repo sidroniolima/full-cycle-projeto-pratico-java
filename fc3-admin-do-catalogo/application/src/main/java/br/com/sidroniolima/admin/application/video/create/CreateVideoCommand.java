@@ -1,6 +1,6 @@
 package br.com.sidroniolima.admin.application.video.create;
 
-import br.com.sidroniolima.admin.domain.video.Resource;
+import br.com.sidroniolima.admin.domain.resource.Resource;
 
 import java.util.Optional;
 import java.util.Set;
