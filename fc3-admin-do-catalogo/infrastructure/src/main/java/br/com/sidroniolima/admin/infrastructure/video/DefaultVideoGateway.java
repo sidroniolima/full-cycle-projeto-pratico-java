@@ -69,7 +69,7 @@ public class DefaultVideoGateway implements VideoGateway {
                 page
         );
 
-        return new Pagination<>(
+        return new Pagination<VideoPreview>(
                 actualPage.getNumber(),
                 actualPage.getSize(),
                 actualPage.getTotalElements(),
