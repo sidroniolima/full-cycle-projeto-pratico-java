@@ -146,6 +146,10 @@ public final class Fixture {
         public static Rating rating() {
             return FAKER.options().option(Rating.values());
         }
+
+        public static VideoMediaType mediaType() {
+            return FAKER.options().option(VideoMediaType.values());
+        }
     }
 
     public static final class Genres {
