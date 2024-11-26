@@ -4,8 +4,6 @@ import br.com.sidroniolima.admin.application.UseCaseTest;
 import br.com.sidroniolima.admin.application.video.retreive.get.DefaultGetVideoByIdUseCase;
 import br.com.sidroniolima.admin.domain.Fixture;
 import br.com.sidroniolima.admin.domain.exceptions.NotFoundException;
-import br.com.sidroniolima.admin.domain.resource.Resource;
-import br.com.sidroniolima.admin.domain.utils.IdUtils;
 import br.com.sidroniolima.admin.domain.video.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -69,11 +67,11 @@ public class GetVideoByIdUseCaseTest extends UseCaseTest {
                         expectedCategories,
                         expectedGenres,
                         expectedMembers
-                ).setVideo(expectedVideo)
-                .setTrailer(expectedTrailer)
-                .setBanner(expectedBanner)
-                .setThumbnail(expectedThumb)
-                .setThumbnailHalf(expectedThumbHalf);
+                ).updateVideoMedia(expectedVideo)
+                .updateTrailerMedia(expectedTrailer)
+                .updateBannerMedia(expectedBanner)
+                .updateThumbnailMedia(expectedThumb)
+                .updateThumbnailHalfMedia(expectedThumbHalf);
 
         final var expectedId = aVideo.getId();
 

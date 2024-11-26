@@ -3,6 +3,8 @@ package br.com.sidroniolima.admin.infrastructure.video;
 import br.com.sidroniolima.admin.domain.Identifier;
 import br.com.sidroniolima.admin.domain.pagination.Pagination;
 import br.com.sidroniolima.admin.domain.video.*;
+import br.com.sidroniolima.admin.infrastructure.configuration.annotations.VideoCreatedQueue;
+import br.com.sidroniolima.admin.infrastructure.services.EventService;
 import br.com.sidroniolima.admin.infrastructure.utils.SqlUtils;
 import br.com.sidroniolima.admin.infrastructure.video.persistence.VideoJpaEntity;
 import br.com.sidroniolima.admin.infrastructure.video.persistence.VideoRepository;
@@ -20,9 +22,13 @@ import static br.com.sidroniolima.admin.domain.utils.CollectionUtils.nullIfEmpty
 @Component
 public class DefaultVideoGateway implements VideoGateway {
 
+    private final EventService eventsService;
     private final VideoRepository videoRepository;
 
-    public DefaultVideoGateway(final VideoRepository videoRepository) {
+    public DefaultVideoGateway(
+            @VideoCreatedQueue final EventService eventsService,
+            final VideoRepository videoRepository) {
+        this.eventsService =  Objects.requireNonNull(eventsService);
         this.videoRepository = Objects.requireNonNull(videoRepository);
     }
 
@@ -78,7 +84,11 @@ public class DefaultVideoGateway implements VideoGateway {
     }
 
     private Video save(final Video aVideo) {
-        return this.videoRepository.save(VideoJpaEntity.from(aVideo))
+        final var result = this.videoRepository.save(VideoJpaEntity.from(aVideo))
                 .toAggregate();
+
+        aVideo.publishDomainEvents(this.eventsService::send);
+
+        return result;
     }
 }

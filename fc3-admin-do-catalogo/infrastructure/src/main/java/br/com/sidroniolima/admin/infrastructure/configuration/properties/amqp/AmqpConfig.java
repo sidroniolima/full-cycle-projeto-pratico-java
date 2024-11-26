@@ -4,7 +4,6 @@ import br.com.sidroniolima.admin.infrastructure.configuration.annotations.VideoC
 import br.com.sidroniolima.admin.infrastructure.configuration.annotations.VideoEncodedQueue;
 import br.com.sidroniolima.admin.infrastructure.configuration.annotations.VideoEvents;
 import org.springframework.amqp.core.*;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
