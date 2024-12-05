@@ -13,9 +13,9 @@ public record CreateVideoCommand(
         Boolean opened,
         Boolean published,
         String rating,
+        Set<String> members,
         Set<String> categories,
         Set<String> genres,
-        Set<String> members,
         Resource video,
         Resource trailer,
         Resource banner,
@@ -31,9 +31,9 @@ public record CreateVideoCommand(
                 final Boolean opened,
                 final Boolean published,
                 final String rating,
+                final Set<String> members,
                 final Set<String> categories,
                 final Set<String> genres,
-                final Set<String> members,
                 final Resource video,
                 final Resource banner,
                 final Resource trailer,
@@ -41,20 +41,52 @@ public record CreateVideoCommand(
                 final Resource thumbnailHalf
         ) {
                 return new CreateVideoCommand(
-                        title, description,
+                        title,
+                        description,
                         launchedAt,
                         duration,
                         opened,
                         published,
                         rating,
+                        members,
                         categories,
                         genres,
-                        members,
                         video,
                         banner,
                         trailer,
                         thumbnail,
                         thumbnailHalf
+                );
+        }
+
+        public static CreateVideoCommand with(
+                final String title,
+                final String description,
+                final Integer launchedAt,
+                final Double duration,
+                final Boolean opened,
+                final Boolean published,
+                final String rating,
+                final Set<String> castMembers,
+                final Set<String> categories,
+                final Set<String> genres
+        ) {
+                return new CreateVideoCommand(
+                        title,
+                        description,
+                        launchedAt,
+                        duration,
+                        opened,
+                        published,
+                        rating,
+                        castMembers,
+                        categories,
+                        genres,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
                 );
         }
 
