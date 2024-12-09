@@ -4,6 +4,7 @@ import br.com.sidroniolima.admin.domain.Identifier;
 import br.com.sidroniolima.admin.domain.utils.CollectionUtils;
 import br.com.sidroniolima.admin.domain.video.AudioVideoMedia;
 import br.com.sidroniolima.admin.domain.video.ImageMedia;
+import br.com.sidroniolima.admin.domain.video.Rating;
 import br.com.sidroniolima.admin.domain.video.Video;
 
 import java.time.Instant;
@@ -19,7 +20,7 @@ public record VideoOutput(
         double duration,
         boolean opened,
         boolean published,
-        String rating,
+        Rating rating,
         Set<String> categories,
         Set<String> genres,
         Set<String> castMembers,
@@ -40,7 +41,7 @@ public record VideoOutput(
                 aVideo.getDuration(),
                 aVideo.getOpened(),
                 aVideo.getPublished(),
-                aVideo.getRating().getName(),
+                aVideo.getRating(),
                 CollectionUtils.mapTo(aVideo.getCategories(), Identifier::getValue),
                 CollectionUtils.mapTo(aVideo.getGenres(), Identifier::getValue),
                 CollectionUtils.mapTo(aVideo.getCastMembers(), Identifier::getValue),
