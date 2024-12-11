@@ -1,11 +1,12 @@
 package br.com.sidroniolima.admin.infrastructure.video.presenters;
 
 import br.com.sidroniolima.admin.application.video.retreive.get.VideoOutput;
+import br.com.sidroniolima.admin.application.video.retreive.list.VideoListOutput;
+import br.com.sidroniolima.admin.application.video.update.UpdateVideoOutput;
+import br.com.sidroniolima.admin.domain.pagination.Pagination;
 import br.com.sidroniolima.admin.domain.video.AudioVideoMedia;
 import br.com.sidroniolima.admin.domain.video.ImageMedia;
-import br.com.sidroniolima.admin.infrastructure.video.models.AudioVideoMediaResponse;
-import br.com.sidroniolima.admin.infrastructure.video.models.ImageMediaResponse;
-import br.com.sidroniolima.admin.infrastructure.video.models.VideoResponse;
+import br.com.sidroniolima.admin.infrastructure.video.models.*;
 
 public interface VideoApiPresenter {
     static VideoResponse present(final VideoOutput output) {
@@ -57,5 +58,23 @@ public interface VideoApiPresenter {
                 image.name(),
                 image.location()
         );
+    }
+
+    static UpdateVideoResponse present(final UpdateVideoOutput output) {
+        return new UpdateVideoResponse(output.id());
+    }
+
+    static VideoListResponse present(final VideoListOutput output) {
+        return new VideoListResponse(
+                output.id(),
+                output.title(),
+                output.description(),
+                output.createdAt(),
+                output.updatedAt()
+        );
+    }
+
+    static Pagination<VideoListResponse> present(final Pagination<VideoListOutput> page) {
+        return page.map(VideoApiPresenter::present);
     }
 }
