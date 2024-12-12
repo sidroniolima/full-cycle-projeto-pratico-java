@@ -5,6 +5,7 @@ import br.com.sidroniolima.admin.infrastructure.video.models.CreateVideoRequest;
 import br.com.sidroniolima.admin.infrastructure.video.models.UpdateVideoRequest;
 import br.com.sidroniolima.admin.infrastructure.video.models.VideoListResponse;
 import br.com.sidroniolima.admin.infrastructure.video.models.VideoResponse;
+import com.google.cloud.ByteArray;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -113,4 +114,29 @@ public interface VideoAPI {
             @ApiResponse(responseCode = "500", description = "An internal server error occurs"),
     })
     void deleteById(@PathVariable(name = "id") String id);
+
+    @GetMapping(value = "{id}/medias/{type}")
+    @Operation(summary = "Get a video media by it's type")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Media retrieved successfully"),
+            @ApiResponse(responseCode = "404", description = "Media was not found"),
+            @ApiResponse(responseCode = "500", description = "An internal server error occurs"),
+    })
+    ResponseEntity<byte[]> getMediaByType(
+            @PathVariable(name = "id") String id,
+            @PathVariable(name = "type") String type
+    );
+
+    @PostMapping(value= "{id}/medias/{type}")
+    @Operation(summary = "Upload a video by it's type")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Media created successfully"),
+            @ApiResponse(responseCode = "404", description = "Video was thrown"),
+            @ApiResponse(responseCode = "500", description = "An internal server error occurs"),
+    })
+    ResponseEntity<?> uploadMediaByType(
+            @PathVariable(name = "id") String id,
+            @PathVariable(name = "type") String type,
+            @RequestParam(name = "media_file") MultipartFile media
+    );
 }

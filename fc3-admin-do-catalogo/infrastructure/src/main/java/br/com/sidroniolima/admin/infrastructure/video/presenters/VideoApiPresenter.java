@@ -1,5 +1,6 @@
 package br.com.sidroniolima.admin.infrastructure.video.presenters;
 
+import br.com.sidroniolima.admin.application.video.media.upload.UploadMediaOutput;
 import br.com.sidroniolima.admin.application.video.retreive.get.VideoOutput;
 import br.com.sidroniolima.admin.application.video.retreive.list.VideoListOutput;
 import br.com.sidroniolima.admin.application.video.update.UpdateVideoOutput;
@@ -76,5 +77,9 @@ public interface VideoApiPresenter {
 
     static Pagination<VideoListResponse> present(final Pagination<VideoListOutput> page) {
         return page.map(VideoApiPresenter::present);
+    }
+
+    static UploadMediaResponse present(final UploadMediaOutput output) {
+        return new UploadMediaResponse(output.videoId(), output.mediaType());
     }
 }
