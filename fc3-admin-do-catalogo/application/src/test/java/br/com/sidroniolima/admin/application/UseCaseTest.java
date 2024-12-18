@@ -1,7 +1,6 @@
 package br.com.sidroniolima.admin.application;
 
 import br.com.sidroniolima.admin.domain.Identifier;
-import br.com.sidroniolima.admin.domain.category.CategoryID;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.ExtensionContext;

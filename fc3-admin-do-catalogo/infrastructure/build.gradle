@@ -9,7 +9,7 @@ buildscript {
 }
 
 plugins {
-    id 'java'
+    id 'java-conventions'
     id 'application'
     id 'org.springframework.boot' version '2.6.15'
     id 'io.spring.dependency-management' version '1.1.0'
@@ -17,15 +17,10 @@ plugins {
 }
 
 group = 'br.com.sidroniolima.admin.infrastructure'
-version = '1.0-SNAPSHOT'
 
 bootJar {
     archiveFileName = 'application.war'
     destinationDirectory.set(file("${rootProject.buildDir}/libs"))
-}
-
-repositories {
-    mavenCentral()
 }
 
 dependencies {
@@ -74,8 +69,4 @@ flyway {
     user = System.getenv('FLYWAY_USER') ?: 'root'
     password = System.getenv('FLYWAY_PASS') ?: '123456'
     cleanDisabled = false
-}
-
-test {
-    useJUnitPlatform()
 }

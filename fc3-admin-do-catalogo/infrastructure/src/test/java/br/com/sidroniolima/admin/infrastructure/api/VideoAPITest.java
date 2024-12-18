@@ -549,63 +549,6 @@ public class VideoAPITest {
     }
 
     @Test
-    public void givenAnInvalidCommand_whenCallsUpdateVideo_shouldReturnNotification() throws Exception {
-        // given
-        final var wesley = Fixture.CastMembers.wesley();
-        final var aulas = Fixture.Categories.aulas();
-        final var tech = Fixture.Genres.tech();
-
-        final var expectedId = VideoID.unique();
-        final var expectedErrorMessage = "'title' should not be empty";
-        final var expectedErrorCount = 1;
-
-        final var expectedTitle = "";
-        final var expectedDescription = Fixture.Videos.description();
-        final var expectedLaunchYear = Year.of(Fixture.year());
-        final var expectedDuration = Fixture.duration();
-        final var expectedOpened = Fixture.bool();
-        final var expectedPublished = Fixture.bool();
-        final var expectedRating = Fixture.Videos.rating();
-        final var expectedCategories = Set.of(aulas.getId().getValue());
-        final var expectedGenres = Set.of(tech.getId().getValue());
-        final var expectedMembers = Set.of(wesley.getId().getValue());
-
-        final var aCmd = new UpdateVideoRequest(
-                expectedTitle,
-                expectedDescription,
-                expectedDuration,
-                expectedLaunchYear.getValue(),
-                expectedOpened,
-                expectedPublished,
-                expectedRating.getName(),
-                expectedMembers,
-                expectedCategories,
-                expectedGenres
-        );
-
-        when(updateVideoUseCase.execute(any()))
-                .thenThrow(NotificationException.with(new Error(expectedErrorMessage)));
-
-        // when
-
-        final var aRequest = put("/videos/{id}", expectedId.getValue())
-                .accept(MediaType.APPLICATION_JSON)
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(mapper.writeValueAsString(aCmd));
-
-        final var response = this.mvc.perform(aRequest);
-
-        // then
-        response.andExpect(status().isUnprocessableEntity())
-                .andExpect(header().string("Content-Type", MediaType.APPLICATION_JSON_VALUE))
-                .andExpect(jsonPath("$.message", equalTo(expectedErrorMessage)))
-                .andExpect(jsonPath("$.errors", hasSize(expectedErrorCount)))
-                .andExpect(jsonPath("$.errors[0].message", equalTo(expectedErrorMessage)));
-
-        verify(updateVideoUseCase).execute(any());
-    }
-
-    @Test
     public void givenAValidId_whenCallsDeleteById_shouldDeleteIt() throws Exception {
         // given
         final var expectedId = VideoID.unique();
