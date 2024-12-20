@@ -1,11 +1,12 @@
 package br.com.sidroniolima.admin.domain.video;
 
+import br.com.sidroniolima.admin.domain.UnitTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ImageMediaTest {
+class ImageMediaTest extends UnitTest {
 
     @Test
     public void givenValidParams_whenCallsNewImage_shouldReturnInstance() {

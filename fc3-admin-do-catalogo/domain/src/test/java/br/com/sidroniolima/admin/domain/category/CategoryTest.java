@@ -1,11 +1,12 @@
 package br.com.sidroniolima.admin.domain.category;
 
+import br.com.sidroniolima.admin.domain.UnitTest;
 import br.com.sidroniolima.admin.domain.exceptions.DomainException;
 import br.com.sidroniolima.admin.domain.validation.handler.ThrowsValidationHandler;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class CategoryTest {
+public class CategoryTest extends UnitTest {
 
     @Test
     public void givenAValidParams_whenCallNewCategory_thenInstantiateACategory() {

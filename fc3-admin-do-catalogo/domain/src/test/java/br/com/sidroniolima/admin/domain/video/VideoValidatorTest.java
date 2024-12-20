@@ -1,5 +1,6 @@
 package br.com.sidroniolima.admin.domain.video;
 
+import br.com.sidroniolima.admin.domain.UnitTest;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberID;
 import br.com.sidroniolima.admin.domain.category.CategoryID;
 import br.com.sidroniolima.admin.domain.exceptions.DomainException;
@@ -11,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Year;
 import java.util.Set;
 
-public class VideoValidatorTest {
+public class VideoValidatorTest extends UnitTest {
 
     @Test
     public void givenNullTitle_whenCallsValidate_shouldReceiveError() {

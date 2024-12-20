@@ -1,6 +1,7 @@
 package br.com.sidroniolima.admin;
 
 import br.com.sidroniolima.admin.infrastructure.configuration.WebServerConfig;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,5 +16,6 @@ import java.lang.annotation.*;
 @SpringBootTest(classes = WebServerConfig.class)
 @ExtendWith(MySqlCleanUpExtension.class)
 @AutoConfigureMockMvc
+@Tag("e2eTest")
 public @interface E2ETest {
 }

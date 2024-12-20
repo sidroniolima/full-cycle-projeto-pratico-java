@@ -1,5 +1,6 @@
 package br.com.sidroniolima.admin.domain.genre;
 
+import br.com.sidroniolima.admin.domain.UnitTest;
 import br.com.sidroniolima.admin.domain.category.CategoryID;
 import br.com.sidroniolima.admin.domain.exceptions.NotificationException;
 import org.junit.jupiter.api.Assertions;
@@ -8,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenreTest {
+public class GenreTest extends UnitTest {
 
     @Test
     public void givenValidParams_whenCallNewGenre_shouldInstantiateAGenre() {

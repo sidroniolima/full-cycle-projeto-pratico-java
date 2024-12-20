@@ -1,10 +1,11 @@
 package br.com.sidroniolima.admin.domain.castmember;
 
+import br.com.sidroniolima.admin.domain.UnitTest;
 import br.com.sidroniolima.admin.domain.exceptions.NotificationException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class CastMemberTest {
+public class CastMemberTest extends UnitTest {
 
     @Test
     public void givenAValidParams_whenCalssNewMember_thenInstantiateACastMember() {

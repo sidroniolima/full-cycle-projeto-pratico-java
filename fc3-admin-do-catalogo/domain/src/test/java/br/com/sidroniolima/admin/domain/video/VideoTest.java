@@ -1,5 +1,6 @@
 package br.com.sidroniolima.admin.domain.video;
 
+import br.com.sidroniolima.admin.domain.UnitTest;
 import br.com.sidroniolima.admin.domain.castmember.CastMemberID;
 import br.com.sidroniolima.admin.domain.category.CategoryID;
 import br.com.sidroniolima.admin.domain.genre.GenreID;
@@ -11,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Year;
 import java.util.Set;
 
-public class VideoTest {
+public class VideoTest extends UnitTest {
 
     @Test
     public void givenValidParams_whenCallsNewVideo_shouldInstantiate() {

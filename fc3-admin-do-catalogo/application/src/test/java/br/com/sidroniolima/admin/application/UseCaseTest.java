@@ -1,6 +1,7 @@
 package br.com.sidroniolima.admin.application;
 
 import br.com.sidroniolima.admin.domain.Identifier;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.ExtensionContext;
@@ -12,6 +13,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @ExtendWith(MockitoExtension.class)
+@Tag("unitTest")
 public abstract class UseCaseTest implements BeforeEachCallback {
 
     @Override
