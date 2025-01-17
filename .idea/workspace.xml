@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71fe7efb-f1d0-4eb8-99d9-980c27778638" name="Changes" comment="" />
+    <list default="true" id="c33a65e9-d799-4e04-b2be-147411f13101" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,30 +18,550 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/domain">
+      <ProjectState />
+    </projectState>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
-  <component name="ProjectId" id="2fEhgSGyYSFAGoUhIpylJKx0tKO" />
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/domain">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/application">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/infrastructure">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="fc3-admin-do-catalogo" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="fc3-admin-do-catalogo" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="fc3-admin-do-catalogo" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="fc3-admin-do-catalogo" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Enum" />
+        <option value="AnnotationType" />
+        <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2fEibwpkWKiytkooM7CbUAT0c2J" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.AudioVideoMediaTest.executor": "Run",
+    "Gradle.Build fc3-admin-do-catalogo.executor": "Run",
+    "Gradle.CastMemberAPITest.executor": "Run",
+    "Gradle.CastMemberAPITest.givenAValidId_whenCAllsDeleteById_shouldDeleteId.executor": "Run",
+    "Gradle.CastMemberE2ETest.asACatalogAdminIShouldBeAbleToCreateANewCastMemberWithValidValues.executor": "Run",
+    "Gradle.CastMemberE2ETest.executor": "Run",
+    "Gradle.CastMemberListResponseTest.executor": "Run",
+    "Gradle.CastMemberListResponseTest.testMarshall.executor": "Run",
+    "Gradle.CastMemberMySQLGatewayTest.executor": "Run",
+    "Gradle.CastMemberMySQLGatewayTest.givenAValidCastMember_whenCallsCreate_shouldPersistIt.executor": "Run",
+    "Gradle.CastMemberMySQLGatewayTest.givenAValidCastMember_whenCallsDeleteById_shouldDeleteIt.executor": "Run",
+    "Gradle.CastMemberMySQLGatewayTest.givenAValidCastMember_whenCallsUpdate_shouldRefreshIt.executor": "Run",
+    "Gradle.CastMemberMySQLGatewayTest.givenAnInvalidId_whenCallsDeleteById_shouldIgnore.executor": "Run",
+    "Gradle.CastMemberResponseTest.testMarshal.executor": "Run",
+    "Gradle.CastMemberTest.executor": "Run",
+    "Gradle.CastMemberTest.givenaValidPArams_whenCalssNewMember_thenInstantiateACastMember.executor": "Run",
+    "Gradle.CategoryAPITest.givenACommandWithInvalidId_whenCallsUpdateCategory_thenShouldReturnNotFoundException.executor": "Run",
+    "Gradle.CategoryAPITest.givenACommandWithInvalidName_whenCallsUpdateCategory_thenShouldReturnDomainException.executor": "Run",
+    "Gradle.CategoryAPITest.givenAInvalidCommand_whenCallsCreateCategory_thenShouldReturnDomainException.executor": "Run",
+    "Gradle.CategoryAPITest.givenAInvalidName_whenCallsCreateCategory_thenShouldReturnDomainException.executor": "Run",
+    "Gradle.CategoryAPITest.givenAValidCommand_whenCallsCreateCategory_shouldReturnCategoryId.executor": "Run",
+    "Gradle.CategoryAPITest.givenAValidCommand_whenCallsUpdateCategory_shouldReturnCategoryId.executor": "Run",
+    "Gradle.CategoryAPITest.givenAnInvalidId_whenCallsGetCategory_shouldReturnNotFound.executor": "Run",
+    "Gradle.CategoryAPITest.givenAnValidId_whenCallsDeleteCategory_shouldBeOk.executor": "Run",
+    "Gradle.CategoryAPITest.givenAnValidId_whenCallsGetCategory_shouldReturnCategory.executor": "Run",
+    "Gradle.CategoryAPITest.test.executor": "Run",
+    "Gradle.CategoryE2ETest.asACatalogAdminIShouldBeAbleToCreateANewCategoryWithValidValues.executor": "Run",
+    "Gradle.CategoryE2ETest.asACatalogAdminIShouldBeAbleToNavigateToAllCategories.executor": "Run",
+    "Gradle.CategoryE2ETest.asACatalogAdminIShouldBeAbleToSortAllCategoriesByDescriptionDesc.executor": "Run",
+    "Gradle.CategoryE2ETest.executor": "Run",
+    "Gradle.CategoryE2ETest.testWorks.executor": "Run",
+    "Gradle.CategoryListResponseTest.testMarshall.executor": "Run",
+    "Gradle.CategoryMySQLGatewayTest.executor": "Run",
+    "Gradle.CategoryMySQLGatewayTest.givenAPrePersistedCategoryAndInvalidCategoryId_whenTryToDeleteIr_shouldDeleteCategory.executor": "Run",
+    "Gradle.CategoryMySQLGatewayTest.givenAPrePersistedCategoryAndValidCategoryId_whenCallsFindById_shouldReturnCategoryUpdated.executor": "Run",
+    "Gradle.CategoryMySQLGatewayTest.givenAPrePersistedCategoryAndValidCategoryId_whenTryToDeleteIr_shouldDeleteCategory.executor": "Run",
+    "Gradle.CategoryMySQLGatewayTest.givenAValidCategory_whenCallsCreate_shouldReturnANewCategory.executor": "Run",
+    "Gradle.CategoryMySQLGatewayTest.givenAValidCategory_whenCallsUpdate_shouldReturnCategoryUpdated.executor": "Run",
+    "Gradle.CategoryMySQLGatewayTest.givenEmptyCategoriesTable_whenCallsFindAll_shouldReturnEmptyPage.executor": "Run",
+    "Gradle.CategoryMySQLGatewayTest.givenPrePersistedCategories_whenCallsExistsByIds_shouldReturnIds.executor": "Run",
+    "Gradle.CategoryMySQLGatewayTest.givenValidCategoryIdNotStored_whenCallsFindById_shouldReturnEmpty.executor": "Run",
+    "Gradle.CategoryMySQLGatewayTest.testInjectedDependencies.executor": "Run",
+    "Gradle.CategoryRepositoryTest.executor": "Run",
+    "Gradle.CategoryRepositoryTest.givenAnInvalidNullName_whenCallsSave_shouldReturnError.executor": "Run",
+    "Gradle.CategoryRepositoryTest.givenAnInvalidNullUpdatedAt_whenCallsSave_shouldReturnError.executor": "Run",
+    "Gradle.CategoryResponseTest.testMarshal.executor": "Run",
+    "Gradle.CategoryResponseTest.testUnmarshal.executor": "Run",
+    "Gradle.CategoryTest (1).executor": "Debug",
+    "Gradle.CategoryTest.executor": "Run",
+    "Gradle.CategoryTest.givenAValidActiveCategory_whenCallDeactivate_thenReturnCategoryInactivated.executor": "Run",
+    "Gradle.CategoryTest.givenAValidCategory_whenCallActivate_thenReturnCategoryActivated.executor": "Run",
+    "Gradle.CategoryTest.givenAValidCategory_whenCallUpdateToInactive_thenReturnCategoryUpdated.executor": "Run",
+    "Gradle.CategoryTest.givenAValidCategory_whenCallUpdateWithInvalidParams_thenReturnCategoryUpdated.executor": "Run",
+    "Gradle.CategoryTest.givenAValidCategory_whenCallUpdate_thenReturnCategoryUpdated.executor": "Run",
+    "Gradle.CategoryTest.givenAnInvalidEmptyName_whenCallNewCategoryAndValidate_thenShouldReturnAnError.executor": "Run",
+    "Gradle.CategoryTest.givenAnInvalidNameLengthGreaterThan255_whenCallNewCategoryAndValidate_thenShouldReturnAnError.executor": "Run",
+    "Gradle.CategoryTest.givenAnInvalidNullName_whenCallNewCategoryAndValidate_thenShouldReturnAnError.executor": "Run",
+    "Gradle.CreateCastMemberRequestTest.executor": "Run",
+    "Gradle.CreateCastMemberUseCaseIT.executor": "Run",
+    "Gradle.CreateCastMemberUseCaseTest.givenAInvalidType_whenCallsCreateCastMember_shouldThrowsNotificationException.executor": "Run",
+    "Gradle.CreateCastMemberUseCaseTest.givenAInvlaideName_whenCallsCreateCastMember_shouldThrowsNotificationException.executor": "Run",
+    "Gradle.CreateCastMemberUseCaseTest.givenAValidCommand_whenCallsCreateCastMember_shouldReturnIt.executor": "Run",
+    "Gradle.CreateCategoryRequestTest.testMarshall.executor": "Run",
+    "Gradle.CreateCategoryRequestTest.testUnmarshall.executor": "Run",
+    "Gradle.CreateCategoryUseCaseIT.executor": "Run",
+    "Gradle.CreateCategoryUseCaseIT.givenAInvalidName_whenCallsCreateCategory_thenShouldReturnDomainException.executor": "Run",
+    "Gradle.CreateCategoryUseCaseIT.givenAValidCommandWithInactiveCategory_whenCallsCreateCategory_shouldReturnInactiveCategoryId.executor": "Run",
+    "Gradle.CreateCategoryUseCaseIT.givenAValidCommand_whenCallsCreateCategory_shouldReturnCategoryId.executor": "Run",
+    "Gradle.CreateCategoryUseCaseIT.givenAValidCommand_whenGatewayThrowsRandomException_shouldReturnAnException.executor": "Run",
+    "Gradle.CreateCategoryUseCaseTest.executor": "Run",
+    "Gradle.CreateCategoryUseCaseTest.givenAInvalidName_whenCallsCreateCategory_thenShouldReturnDomainException.executor": "Run",
+    "Gradle.CreateCategoryUseCaseTest.givenAValidCommandWithInactiveCategory_whenCallsCreateCategory_shouldReturnInactiveCategoryId.executor": "Run",
+    "Gradle.CreateCategoryUseCaseTest.givenAValidCommand_whenCallsCreateCategory_shouldReturnCategoryId.executor": "Debug",
+    "Gradle.CreateCategoryUseCaseTest.givenAValidCommand_whenGatewayThrowsException_shouldReturnAnException.executor": "Run",
+    "Gradle.CreateCategoryUseCaseTest.givenAValidCommand_whenGatewayThrowsRandomException_shouldReturnAnException.executor": "Run",
+    "Gradle.CreateGenreRequestTest.executor": "Run",
+    "Gradle.CreateGenreUseCaseIT.executor": "Run",
+    "Gradle.CreateGenreUseCaseTest.executor": "Run",
+    "Gradle.CreateGenreUseCaseTest.givenAInvalidCommand_whenCallsCreateGenreAndSomeCategoriesDoesNotExists_shouldReturnDomainException.executor": "Run",
+    "Gradle.CreateGenreUseCaseTest.givenAInvalidEmptyName_whenCallsCreateCategory_shouldReturnDomainException.executor": "Run",
+    "Gradle.CreateGenreUseCaseTest.givenAInvalidNullName_whenCallsCreateCategory_shouldReturnDomainException.executor": "Run",
+    "Gradle.CreateGenreUseCaseTest.givenAValidCommandWithCategories_whenCallsCreateGenre_shouldReturnGenreId.executor": "Run",
+    "Gradle.CreateGenreUseCaseTest.givenAValidCommand_whenCallsCrateGenre_shouldReturnGenreId.executor": "Run",
+    "Gradle.CreateGenreUseCaseTest.givenAValidCommand_whenCallsCreateGenreAndSomeCategoriesDoesNotExists_shouldReturnDomainException.executor": "Run",
+    "Gradle.CreateGenreUseCaseTestIT.executor": "Run",
+    "Gradle.CreateGenreUseCaseTestIT.givenAValidCommand_whenCallsCrateGenre_shouldReturnGenreId.executor": "Run",
+    "Gradle.CreateVideoUseCaseTest.executor": "Run",
+    "Gradle.CreateVideoUseCaseTest.givenAEmptyTitle_whenCallsCreateVideo_shouldReturnDomainException.executor": "Run",
+    "Gradle.CreateVideoUseCaseTest.givenANullLaunchYear_whenCallsCreateVideo_shouldReturnDomainException.executor": "Run",
+    "Gradle.CreateVideoUseCaseTest.givenANullRating_whenCallsCreateVideo_shouldReturnDomainException.executor": "Run",
+    "Gradle.CreateVideoUseCaseTest.givenANullTitle_whenCallsCreateVideo_shouldReturnDomainException.executor": "Run",
+    "Gradle.CreateVideoUseCaseTest.givenAValidCommandWithoutCategories_whenCallsCreateVideo_shouldReturnVideoId.executor": "Run",
+    "Gradle.CreateVideoUseCaseTest.givenAValidCommand_WhenCallsCreateVideo_shouldReturnVideo.executor": "Run",
+    "Gradle.CreateVideoUseCaseTest.givenAValidCommand_whenCallsCreateVideo_shouldReturnVideo.executor": "Run",
+    "Gradle.CreateVideoUseCaseTest.givenAValidCommand_whenCallsCreateVideo_shouldReturnVideoId.executor": "Run",
+    "Gradle.CreateVideoUseCaseTest.givenAnInvalidRating_whenCallsCreateVideo_shouldReturnDomainException.executor": "Run",
+    "Gradle.CreateVideoUseCaseTest.givenValidCommand_whenCallsCreateVideoAndSomeCategoriesDoesNotExists_shouldReturnDomainException.executor": "Run",
+    "Gradle.DefaultMediaResourceGatewayTest.executor": "Run",
+    "Gradle.DefaultMediaResourceGatewayTest.givenValidResource_whenCallStorageAudioVideo_shouldStoreIt.executor": "Run",
+    "Gradle.DefaultMediaResourceGatewayTest.givenValidResource_whenCallStorageImage_shouldStoreIt.executor": "Run",
+    "Gradle.DefaultMediaResourceGatewayTest.testInjection.executor": "Run",
+    "Gradle.DefaultVideoGatewayTest.executor": "Run",
+    "Gradle.DefaultVideoGatewayTest.givenAValidVideoWithoutRelations_whenCallsCreate_shouldPersistIt.executor": "Run",
+    "Gradle.DefaultVideoGatewayTest.givenAValidVideo_whenCallsUpdate_shouldPersistIt.executor": "Run",
+    "Gradle.DeleteCastMemberUseCaseIT.executor": "Run",
+    "Gradle.DeleteCastMemberUseCaseIT.givenAValidId_whenCallsDeleteCastMember_shouldDeleteId.executor": "Run",
+    "Gradle.DeleteCastMemberUseCaseTest.executor": "Run",
+    "Gradle.DeleteCategoryUseCaseIT.executor": "Run",
+    "Gradle.DeleteCategoryUseCaseTest.executor": "Run",
+    "Gradle.DeleteGenreUseCaseTest.executor": "Run",
+    "Gradle.DeleteVideoUseCaseTest.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.EntityTest.executor": "Run",
+    "Gradle.GCStorageServiceTest.executor": "Run",
+    "Gradle.GCStorageServiceTest.givenInvalidResource_whenCallsGet_shouldBeEmpty.executor": "Run",
+    "Gradle.GCStorageServiceTest.givenValidResource_whenCallsGet_shouldRetrieveId.executor": "Debug",
+    "Gradle.GenreAPITest.executor": "Run",
+    "Gradle.GenreAPITest.givenAInvalidId_whenCallsGetGenreById_shouldReturnNotFound.executor": "Run",
+    "Gradle.GenreAPITest.givenAValidCommand_whenCallsCreateGenre_shouldReturnGenreId.executor": "Run",
+    "Gradle.GenreAPITest.givenAValidCommand_whenCallsUpdateGenre_shouldReturnGenreId.executor": "Run",
+    "Gradle.GenreAPITest.givenAValidId_whenCallsDeleteGenre_shouldOk.executor": "Run",
+    "Gradle.GenreAPITest.givenAValidId_whenCallsGetGenreById_shouldReturnGenre.executor": "Run",
+    "Gradle.GenreAPITest.givenAnInvalidName_whenCallsUpdateGenre_shouldReturnNotification.executor": "Run",
+    "Gradle.GenreAPITest.givenValidParams_whenCallsListGenres_shouldReturnGenres.executor": "Run",
+    "Gradle.GenreE2ETest.asACatalogAdminIShouldBeAbleToCreateANewGenreWithValidValues.executor": "Run",
+    "Gradle.GenreE2ETest.asACatalogAdminIShouldBeAbleToInactivateAGenreByItsIdentifier.executor": "Debug",
+    "Gradle.GenreE2ETest.asACatalogAdminIShouldBeAbleToSortAllGenresByNameDesc.executor": "Debug",
+    "Gradle.GenreE2ETest.executor": "Run",
+    "Gradle.GenreListResponseTest.executor": "Run",
+    "Gradle.GenreMySQLGatewayTest.executor": "Run",
+    "Gradle.GenreMySQLGatewayTest.givenAValidGenreActive_whenCallsUpdateGenreInactivating_shouldPersistGenre.executor": "Run",
+    "Gradle.GenreMySQLGatewayTest.givenAValidGenreWithCategories_whenCallsUpdateGenreCleaningCategories_shouldPersistGenre.executor": "Run",
+    "Gradle.GenreMySQLGatewayTest.givenAValidGenre_whenCallsCreateGenre_shouldPersistGenre.executor": "Run",
+    "Gradle.GenreMySQLGatewayTest.givenAValidPage_whenCallsFindAll_shouldReturnFiltered.executor": "Run",
+    "Gradle.GenreMySQLGatewayTest.givenAValidSortAndDirectionAndPage_whenCallsFindAll_shouldReturnFiltered.executor": "Run",
+    "Gradle.GenreMySQLGatewayTest.givenAValidSortAndDirection_whenCallsFindAll_shouldReturnFiltered.executor": "Run",
+    "Gradle.GenreMySQLGatewayTest.givenAValidTerm_whenCallsFindAll_shouldReturnFiltered.executor": "Run",
+    "Gradle.GenreResponseTest.executor": "Run",
+    "Gradle.GenreResponseTest.testUnmarshal.executor": "Run",
+    "Gradle.GenreTest.executor": "Run",
+    "Gradle.GenreTest.givenAValidEmptyCategoriesGenre_whenCallAddCategoriesWithEmptyList_shouldReceiveOk.executor": "Run",
+    "Gradle.GenreTest.givenAValidEmptyCategoriesGenre_whenCallAddNullCategoriesList_shouldReceiveOk.executor": "Run",
+    "Gradle.GenreTest.givenAValidGenre_whenCallUpdateWithNullCategories_shouldReceiveOk.executor": "Run",
+    "Gradle.GenreTest.givenInvalidNameWithLengthGreatherThan255_whenCallNewGenreAndValidate_shouldReceiveAnError.executor": "Run",
+    "Gradle.GetCastMemberByIdUseCaseIT.executor": "Run",
+    "Gradle.GetCastMemberByIdUseCaseIT.givenAValidId_whenCallsGetCastMember_shoudReturnId.executor": "Run",
+    "Gradle.GetCastMemberByIdUseCaseTest.executor": "Run",
+    "Gradle.GetCastMemberByIdUseCaseTest.givenAValidId_whenCallsGetCastMember_shoudReturnId.executor": "Run",
+    "Gradle.GetCategoryByIdUseCaseIT.givenAnInvalidId_whenCallsGetCategory_shouldReturnNotFound.executor": "Run",
+    "Gradle.GetCategoryByIdUseCaseIT.givenAnValidId_whenCallsGetCategory_shouldReturnCategory.executor": "Run",
+    "Gradle.GetCategoryByIdUseCaseIT.givenAnValidId_whenGatewayThrowsException_shouldReturnException.executor": "Run",
+    "Gradle.GetCategoryByIdUseCaseTest.executor": "Run",
+    "Gradle.GetCategoryByIdUseCaseTest.givenAnInvalidId_whenCallsGetCategory_shouldReturnNotFound.executor": "Run",
+    "Gradle.GetCategoryByIdUseCaseTest.givenAnValidId_whenCallsGetCategory_shouldReturnCategory.executor": "Run",
+    "Gradle.GetGenreByIdUseCaseIT.executor": "Run",
+    "Gradle.GetGenreByIdUseCaseIT.givenAValidId_whenCallsGetGenreById_shouldReturnGenre.executor": "Run",
+    "Gradle.GetGenreByIdUseCaseTest.executor": "Run",
+    "Gradle.GetMediaUseCaseTest.executor": "Run",
+    "Gradle.ImageMediaTest.executor": "Run",
+    "Gradle.InMemoryStorageServiceTest.executor": "Run",
+    "Gradle.ListCastMemberUseCaseIT.executor": "Run",
+    "Gradle.ListCastMemberUseCaseTest.executor": "Run",
+    "Gradle.ListCategoriesUseCaseTest.givenAValidQuery_whenCallsListCategories_thenShouldReturnCategories.executor": "Run",
+    "Gradle.ListCategoriesUseCaseTest.givenAValidQuery_whenGatewayThrowsException_shouldReturnException.executor": "Run",
+    "Gradle.ListCategoriesUseCaseTest.givenAValidQuery_whenNoResults_thenShouldReturnEmptyCategories.executor": "Run",
+    "Gradle.ListCategoryUseCaseIT.givenAValidPage_whenCallsListCategories_shouldReturnCategoriesPaginated.executor": "Run",
+    "Gradle.ListCategoryUseCaseIT.givenAValidSortAndDirection_whenCallsListCategories_thenShouldReturnCategoiresOrdered.executor": "Run",
+    "Gradle.ListCategoryUseCaseIT.givenAValidTerm_whenCallsListCategories_shouldReturnCategoriesFiltered.executor": "Run",
+    "Gradle.ListCategoryUseCaseIT.givenAValidTerm_whenTermDoesntMatchesPrePersisted_shouldReturnEmptyPage.executor": "Run",
+    "Gradle.ListGenreUseCaseIT.executor": "Run",
+    "Gradle.ListGenreUseCaseTest.executor": "Run",
+    "Gradle.ListVideoUseCaseTest.executor": "Run",
+    "Gradle.ListVideoUseCaseTest.givenAValidQuery_whenCallsListVideoAndResultIsEmpty_shouldReturnGenres.executor": "Run",
+    "Gradle.MainTest.executor": "Run",
+    "Gradle.MainTest.mainTest.executor": "Run",
+    "Gradle.RabbitEventServiceTest.shouldSendMessage.executor": "Run",
+    "Gradle.SampleIT.executor": "Run",
+    "Gradle.Tests in 'fc3-admin-do-catalogo.infrastructure'.executor": "Run",
+    "Gradle.UpdateCastMemberRequestTest.testUnmarshall.executor": "Run",
+    "Gradle.UpdateCastMemberUseCaseIT.executor": "Run",
+    "Gradle.UpdateCastMemberUseCaseTest.executor": "Run",
+    "Gradle.UpdateCategoryRequestTest.testUnmarshall.executor": "Run",
+    "Gradle.UpdateCategoryUseCaseIT.givenACommandWithInvalidId_whenCallsUpdateCategory_thenShouldReturnNotFoundException.executor": "Run",
+    "Gradle.UpdateCategoryUseCaseIT.givenAInvalidName_whenCallsUpdateCategory_thenShouldReturnDomainException.executor": "Run",
+    "Gradle.UpdateCategoryUseCaseIT.givenAValidCommand_whenCallsUpdateCategory_shouldReturnCategoryId.executor": "Run",
+    "Gradle.UpdateCategoryUseCaseIT.givenAValidCommand_whenGatewayThrowsRandomException_shouldReturnAnException.executor": "Run",
+    "Gradle.UpdateCategoryUseCaseIT.givenAValidInactiveCommand_whenCallsUpdateCategory_shouldReturnInactiveCategoryId.executor": "Run",
+    "Gradle.UpdateCategoryUseCaseTest.givenACommandWithInvalidId_whenCallsUpdateCategory_thenShouldReturnNotFoundException.executor": "Run",
+    "Gradle.UpdateCategoryUseCaseTest.givenAInvalidName_whenCallsUpdateCategory_thenShouldReturnDomainException.executor": "Run",
+    "Gradle.UpdateCategoryUseCaseTest.givenAValidCommand_whenCallsUpdateCategory_shouldReturnCategoryId.executor": "Run",
+    "Gradle.UpdateCategoryUseCaseTest.givenAValidCommand_whenGatewayThrowsException_shouldReturnAnException.executor": "Run",
+    "Gradle.UpdateCategoryUseCaseTest.givenAValidCommand_whenGatewayThrowsRandomException_shouldReturnAnException.executor": "Run",
+    "Gradle.UpdateCategoryUseCaseTest.givenAValidInactiveCommand_whenCallsUpdateCategory_shouldReturnInactiveCategoryId.executor": "Run",
+    "Gradle.UpdateGenreRequestTest.executor": "Run",
+    "Gradle.UpdateGenreRequestTest.testUnmarshall.executor": "Run",
+    "Gradle.UpdateGenreUseCaseIT.executor": "Run",
+    "Gradle.UpdateGenreUseCaseTest.givenAInvalidNameAndNotFoundACategory_whenCallsUpdateGenre_shouldReturnNotificationException.executor": "Run",
+    "Gradle.UpdateGenreUseCaseTest.givenAInvalidName_whenCallsUpdateGenreAndSomeCategoryDoesNotExists_shouldReturnNotificationException.executor": "Run",
+    "Gradle.UpdateGenreUseCaseTest.givenAInvalidName_whenCallsUpdateGenre_shouldReturnNotificationException.executor": "Run",
+    "Gradle.UpdateGenreUseCaseTest.givenAValidCommandWithCategories_whenCallsUpdateGenre_shouldReturnGenreId.executor": "Run",
+    "Gradle.UpdateGenreUseCaseTest.givenAValidCommandWithInactiveGenre_whenCallsUpdateGenre_shouldReturnGenreId.executor": "Run",
+    "Gradle.UpdateGenreUseCaseTest.givenAValidCommand_whenCallsUpdateGenre_shouldReturnGenreId.executor": "Run",
+    "Gradle.UpdateMediaStatusUseCaseTest.executor": "Run",
+    "Gradle.UpdateVideoUseCaseTest.givenAValidCommandWithoutCategories_whenCallsUpdateVideo_shouldReturnVideoId.executor": "Run",
+    "Gradle.UpdateVideoUseCaseTest.givenAValidCommand_whenCallsUpdateVideo_shouldReturnVideoId.executor": "Run",
+    "Gradle.UploadMediaUseCaseTest.executor": "Run",
+    "Gradle.UseCaseTest.executor": "Run",
+    "Gradle.VideoAPITest.executor": "Run",
+    "Gradle.VideoAPITest.givenAValidCommand_whenCallsCreateFull_shouldReturnAnId.executor": "Run",
+    "Gradle.VideoAPITest.givenAValidCommand_whenCallsCreatePartial_shouldReturnId.executor": "Run",
+    "Gradle.VideoAPITest.givenAValidId_whenCallsDeleteById_shouldDeleteIt.executor": "Run",
+    "Gradle.VideoAPITest.givenAValidVideoIdAndFileType_whenCallsGetMediaById_shouldReturnContent.executor": "Run",
+    "Gradle.VideoAPITest.givenAValidVideoIdAndFile_whenCallsUploadMedia_shouldStoreIt.executor": "Run",
+    "Gradle.VideoAPITest.givenAnEmptyBody_whenCallsCreatePartial_shouldReturnError.executor": "Run",
+    "Gradle.VideoAPITest.givenAnInvalidCommand_whenCallsCreateFull_shouldReturnError.executor": "Run",
+    "Gradle.VideoAPITest.givenAnInvalidId_whenCallsGetById_shouldReturnNotFound.executor": "Run",
+    "Gradle.VideoAPITest.givenAnInvalidMediaType_whenCallsUploadMedia_shouldReturnError.executor": "Run",
+    "Gradle.VideoEncoderListenerTest.executor": "Run",
+    "Gradle.VideoEncoderResultTest.executor": "Run",
+    "Gradle.VideoEncoderResultTest.testMarshallErrorResult.executor": "Run",
+    "Gradle.VideoEncoderResultTest.testMarshallSuccessResult.executor": "Run",
+    "Gradle.VideoEncoderResultTest.testUnmarshallSuccessResult.executor": "Run",
+    "Gradle.VideoTest.executor": "Run",
+    "Gradle.VideoTest.givenValidParamsWhenCallsNewVideoShouldInstantiate.executor": "Run",
+    "Gradle.VideoTest.givenValidParams_whenCallsNewVideo_shouldInstantiate.executor": "Run",
+    "Gradle.VideoTest.givenValidVideo_whenCallsUpdateTrailerMedia_shouldReturnUpdated.executor": "Debug",
+    "Gradle.VideoTest.givenValidVideo_whenCallsUpdateVideoMedia_shouldReturnUpdated.executor": "Run",
+    "Gradle.VideoValidatorTest.executor": "Run",
+    "Gradle.VideoValidatorTest.givenNullTitle_whenCallsValidate_shouldReceiveError.executor": "Run",
+    "Gradle.fc3-admin-do-catalogo [bootJar].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo [build].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo [check].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo [clean].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo [dependencies].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo [jacocoTestReport].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo [jar].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo [test].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo [unitTests].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo:application [check].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo:application [test].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo:domain [build].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo:domain [check].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo:domain [test].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo:infrastructure [:infrastructure:Main.main()].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo:infrastructure [:infrastructure:br.com.sidroniolima.admin.infrastructure.Main.main()].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo:infrastructure [check].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo:infrastructure [dependencies].executor": "Run",
+    "Gradle.fc3-admin-do-catalogo:infrastructure [test].executor": "Run",
+    "JUnit.All in fc3-admin-do-catalogo (1).executor": "Run",
+    "JUnit.All in fc3-admin-do-catalogo.executor": "Run",
+    "JUnit.DeleteGenreUseCaseIT,givenAValidGenreId_whenCallsDeleteGenre_shoudDeleteGenre and 1 more.executor": "Run",
+    "JUnit.Whole project.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "kotlin-language-version-configured": "true"
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "dev",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/sidronio/Junk/meuespaco",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.com.sidroniolima.admin.application.castmember.create" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/infrastructure/src/test/java/br/com/sidroniolima/admin/application/castmember" />
+      <recent name="$PROJECT_DIR$/infrastructure/src/main/resources/db/migration" />
+      <recent name="$PROJECT_DIR$/infrastructure/src/main/resources" />
+      <recent name="$PROJECT_DIR$/domain/src/test/java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/infrastructure/src/test/java/br/com/sidroniolima/admin/application/genre/retrieve" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="br.com.sidroniolima.admin.infrastructure.castmember" />
+      <recent name="br.com.sidroniolima.admin.infrastructure.category" />
+      <recent name="br.com.sidroniolima.admin.domain" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="br.com.sidroniolima.admin.infrastructure.api.controllers" />
+      <recent name="br.com.sidroniolima.admin.infrastructure.amqp" />
+      <recent name="br.com.sidroniolima.admin.infrastructure.video.models" />
+      <recent name="br.com.sidroniolima.admin.infrastructure.video" />
+      <recent name="br.com.sidroniolima.admin.infrastructure.services.impl" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.sidroniolima.admin.domain" />
+      <recent name="br.com.sidroniolima.admin.domain.exceptions" />
+      <recent name="br.com.sidroniolima.admin.domain.video" />
+      <recent name="br.com.sidroniolima.admin.application.castmember.retrieve.list" />
+      <recent name="br.com.sidroniolima.admin.application.castmember.update" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.fc3-admin-do-catalogo [bootJar]">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <envs>
+        <env name="GOOGLE_CLOUD_CREDENTIALS" value="ewogICJ0eXBlIjogInNlcnZpY2VfYWNjb3VudCIsCiAgInByb2plY3RfaWQiOiAiZmMzLWNvZGVmbGl4LTQ0MDkxMyIsCiAgInByaXZhdGVfa2V5X2lkIjogImIwYTMyMWI0MjVkZWVlOTE2NDQ3YWIzZGM2NjFlODk1ZmQ3NDliODMiLAogICJwcml2YXRlX2tleSI6ICItLS0tLUJFR0lOIFBSSVZBVEUgS0VZLS0tLS1cbk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRRFZreitWc3RHTW4xeXRcbjEvRHVVc0J3N1FTc25tRFZtUEZJOVBKVW8zVmRrY29JVDVTUU9VRVRHWU8wZVdIWDFDMEs2dWFxeGxVOXhwMWlcbnp3WjkyS1B5VkFKa24xeHJRdVFjTUFFOEUvci9CMGJUS2NmeDhDa052RFVGRElBZG9BbUt1NVBZTGJwQlJJNlpcbnBhRGsyWXRudUpIRVdrNXBoMlB2MmhhZGhaaktOcndVbzBJbFVVR2FuNm81OWlDU2JFZjA0N3RjSDVIUFFtZnFcbmhmK2FNWTQ1bTFYM3hQOGRGdTJkRmlhcjJCVVA4V3JnUUN0WHk1MDBKU3UyZU9pVTFVL3J2VTFWV3lGa0FsbUZcblVRTmFsQ1J5aGcvWFZpN2RQUmwrenNVMEVLSUI4TTZ5L3dCWExOSlgvOE1VUWhvc1o4SUZaQ0hkcEcrcGxrMHZcbnFrMGUrckxEQWdNQkFBRUNnZ0VBSStYWm1LaFRSMjhielU2UC9RYmt1TFptQkR1a3JCSkdjQXhYMVBrYWg0MHpcbko1MTBxNThyL0hGYjdWQS9yVjdJNlY1ZFFoUVBETkNlOEpZNmtabUJ5UC9zM1F2YUpWODdaeTk4YmFRd0dvQ1hcbkczUVkydVlTaUcvN2UydEQ5M2JJVTh5K2gyWDhPZTh6aHNqTGw5dW03bHFjQ2FSaUxLT29uUTZMb1pOc2dJUk9cbitwQU9Ed09pcU9DSytkZWMxME9SY2RoRlZOTksweUE2RFNDcE1lSXBUSG1nbmlDWlVCNlN5Q0pkWXl3NUJxQUZcbmdEZUdxdjhqa1pvSTJwd2Zic09tTEFvazdKMzdHcndnTDN4UzRrcXJWSHgwdFZDQkNxMy9vS1dCWUdpTWNMSmRcbkdXeGk5cjcrd01XYm51TmhzbXlxRTZaOCtXQm9TVXlvbm0wZzFYQ21oUUtCZ1FEMWw0UXA2aG1jdXJ0YzN3V1lcbjNQRERMRUhLOGZGbFdOYW5kaHZTa0gwMVJTMnYvelFERzhBQTF1V0N3ZkJ0aHo5eDhleldtSkRhNmhjd25xSWRcbmRPMmV5WkJHTVJPL3JWQXd0eUxlWjNYT1ZzT3pTNXdER3gzempVQjhISUI4MW9oN3lZU1VkYTFxNDlQUE5oNWpcbjRkeEhVOWljeG1XYngzRURpc1hBRHVCVkZ3S0JnUURlb0dBdjRGc3NocXMzY1U1VmcyL3pzdFFXUDBuQmpJaFZcbk5LT3FCWUJhL0RFeThGS2ZEVWFpenVEYllBSUc5ZnJvZTY2YjFtcDRGdzFVeGRsVFhDb1hERXk2WXJjYVRjWVFcbitGOUp6anhFUWFzcDJtYTRNWGFtdG9MMG11ZlNVRFpydHNySnNwTzlOdmp4ZjFJQkR3Zk5NQ3FoSi80WnZPcWVcbnlDUmZvNGF6TlFLQmdRRHMxWkMrV3VNWUlYdE50RVRSaFQ4bytDVDZjUmM1aE5KNzY0b3BKTzJaMFh5ZG5KMnJcbjRiYm5HRlY4STBxWVZUVDV6VE40UHVoeU5Bem85aEdnRm9LUC9oRURuNUJMNS9iTkE4NjhhMGxRRXB2bTY2TW5cbjI1Nm1vRER2Znd6cFZubUg1bTNVUFNkZlRSV1ZYYnN3MXo1MkNvVjVxbG1TUUdMYjU1ZUwvc3lYUVFLQmdRQ05cbnQ3dmpYa2ZMM1dKcTVjYis2cSsraTQwMUtFNlVWaGlIWFAzK2dvZ0Y0MXFTV2FmT3RnM01JRFBGa3FWWHR3aGxcbkxDNm41Mk5aVlJ0WVpxWUV5YnZGZGovMXVsZGkrRFZvb2lOT2dXbWQ3Y3UrMWRmajB5RDcyVjBkeHVwaDJFdjhcblg1MVJya3NiL1QyVnhmMzJ6SkdqemRDbFRDY1dUVXR4am1pUk5URFBMUUtCZ0NDYW5zaXBVczEzRW81cnBwbFZcbnJETkk2TEJUcDAxL09ERjJ1YjJBSVQydFF4RjMwRFN4WWJlZkZOb3JqSzVnOU1NODBpelM4cGhwWlNNK1hqQjVcbkJnTGpWOUlBVVhLbG1rQ0NTZHo0ZDdIZWlqSktUTWt2RW9ZcDgvZTJJc21FaUlXZE1yUG5PT1d3dFVoNUQ4T3RcbnkxdG1yRjhDRVJWR2grdVorOWJQNkd0Z1xuLS0tLS1FTkQgUFJJVkFURSBLRVktLS0tLVxuIiwKICAiY2xpZW50X2VtYWlsIjogImZjMy1tcy1hZG1pbi1kby1jYXRhbG9nb0BmYzMtY29kZWZsaXgtNDQwOTEzLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwKICAiY2xpZW50X2lkIjogIjExMzYyMzI4ODExNzExMDY4NjIxOSIsCiAgImF1dGhfdXJpIjogImh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbS9vL29hdXRoMi9hdXRoIiwKICAidG9rZW5fdXJpIjogImh0dHBzOi8vb2F1dGgyLmdvb2dsZWFwaXMuY29tL3Rva2VuIiwKICAiYXV0aF9wcm92aWRlcl94NTA5X2NlcnRfdXJsIjogImh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL29hdXRoMi92MS9jZXJ0cyIsCiAgImNsaWVudF94NTA5X2NlcnRfdXJsIjogImh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL3JvYm90L3YxL21ldGFkYXRhL3g1MDkvZmMzLW1zLWFkbWluLWRvLWNhdGFsb2dvJTQwZmMzLWNvZGVmbGl4LTQ0MDkxMy5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsCiAgInVuaXZlcnNlX2RvbWFpbiI6ICJnb29nbGVhcGlzLmNvbSIKfQo=" />
+        <env name="GOOGLE_CLOUD_PROJECT_ID" value="fc3-codeflix-440913" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="br.com.sidroniolima.admin.infrastructure.Main" />
+      <module name="fc3-admin-do-catalogo.infrastructure.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.sidroniolima.admin.infrastructure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="fc3-admin-do-catalogo [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="fc3-admin-do-catalogo [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="fc3-admin-do-catalogo [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="fc3-admin-do-catalogo [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="fc3-admin-do-catalogo:infrastructure [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/infrastructure" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="fc3-admin-do-catalogo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="fc3-admin-do-catalogo" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Gradle.fc3-admin-do-catalogo [bootJar]" />
+      <item itemvalue="Gradle.fc3-admin-do-catalogo [clean]" />
+      <item itemvalue="Gradle.fc3-admin-do-catalogo [dependencies]" />
+      <item itemvalue="Gradle.fc3-admin-do-catalogo [test]" />
+      <item itemvalue="Gradle.fc3-admin-do-catalogo:infrastructure [dependencies]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.fc3-admin-do-catalogo [bootJar]" />
+        <item itemvalue="Gradle.fc3-admin-do-catalogo [clean]" />
+        <item itemvalue="Gradle.fc3-admin-do-catalogo [test]" />
+        <item itemvalue="Gradle.fc3-admin-do-catalogo:infrastructure [dependencies]" />
+        <item itemvalue="Gradle.fc3-admin-do-catalogo [dependencies]" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="71fe7efb-f1d0-4eb8-99d9-980c27778638" name="Changes" comment="" />
-      <created>1713372260708</created>
+      <changelist id="c33a65e9-d799-4e04-b2be-147411f13101" name="Changes" comment="" />
+      <created>1713372716997</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1713372260708</updated>
+      <updated>1713372716997</updated>
     </task>
     <servers />
   </component>
