@@ -1,0 +1,61 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - develop
+      - 'hotfix/**'
+      - 'release/**'
+  workflow_dispatch:
+
+env:
+  IMAGE_NAME: sidroniolima/full-cycle-projeto-pratico-java
+
+jobs:
+  # Job para execução dos tests
+  tests:
+    name: Tests runner
+    runs-on: ubuntu-latest
+    # Configuração de passos do nosso job
+    steps:
+      # 1. Chck-out do código fonte
+      - uses: actions/checkout@v3
+      # 2. Configurar a JDK na máquina
+      - name: Set up JDK@17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+      # 3. Executar os testes da aplicação
+      - name: Run application tests
+        run: ./gradlew test
+
+  # Job para buildar a aplicação
+  build:
+    name: Build runner
+    needs: tests
+    runs-on: ubuntu-latest
+    # Configuração de passos do nosso job
+    stpes:
+      # 1. Chck-out do código fonte
+      - uses: actions/checkout@v3
+      # 2. Configurar a JDK na máquina
+      - name: Set up JDK@17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+      # 3. Valida a existência do Gradle wrapper
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@v3
+      # 4. Realizar o build para gerar o artefato final
+      - name: Build da aplicação
+        uses: gradle/gradle-build-action@v3
+        with:
+          arguments: clean build -x test
+      # 5. Definir a variável branch name
+      - name: Set BUILD_TAG
+        run: |
+          echo BUILD_TAG=$(echo ${{ github.head_ref || github.ref_name }} | sed "s,/,_,g")-${{ github.run_number }} >> $GITHUB_ENV
