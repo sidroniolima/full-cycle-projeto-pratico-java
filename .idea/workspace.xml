@@ -9,7 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c33a65e9-d799-4e04-b2be-147411f13101" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -351,6 +352,7 @@
       <recent name="br.com.sidroniolima.admin.application.castmember.create" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/infrastructure/src/test/java/br/com/sidroniolima/admin/application/castmember" />
       <recent name="$PROJECT_DIR$/infrastructure/src/main/resources/db/migration" />
       <recent name="$PROJECT_DIR$/infrastructure/src/main/resources" />
@@ -382,7 +384,7 @@
       <recent name="br.com.sidroniolima.admin.application.castmember.update" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.fc3-admin-do-catalogo [bootJar]">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <envs>
         <env name="GOOGLE_CLOUD_CREDENTIALS" value="ewogICJ0eXBlIjogInNlcnZpY2VfYWNjb3VudCIsCiAgInByb2plY3RfaWQiOiAiZmMzLWNvZGVmbGl4LTQ0MDkxMyIsCiAgInByaXZhdGVfa2V5X2lkIjogImIwYTMyMWI0MjVkZWVlOTE2NDQ3YWIzZGM2NjFlODk1ZmQ3NDliODMiLAogICJwcml2YXRlX2tleSI6ICItLS0tLUJFR0lOIFBSSVZBVEUgS0VZLS0tLS1cbk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRRFZreitWc3RHTW4xeXRcbjEvRHVVc0J3N1FTc25tRFZtUEZJOVBKVW8zVmRrY29JVDVTUU9VRVRHWU8wZVdIWDFDMEs2dWFxeGxVOXhwMWlcbnp3WjkyS1B5VkFKa24xeHJRdVFjTUFFOEUvci9CMGJUS2NmeDhDa052RFVGRElBZG9BbUt1NVBZTGJwQlJJNlpcbnBhRGsyWXRudUpIRVdrNXBoMlB2MmhhZGhaaktOcndVbzBJbFVVR2FuNm81OWlDU2JFZjA0N3RjSDVIUFFtZnFcbmhmK2FNWTQ1bTFYM3hQOGRGdTJkRmlhcjJCVVA4V3JnUUN0WHk1MDBKU3UyZU9pVTFVL3J2VTFWV3lGa0FsbUZcblVRTmFsQ1J5aGcvWFZpN2RQUmwrenNVMEVLSUI4TTZ5L3dCWExOSlgvOE1VUWhvc1o4SUZaQ0hkcEcrcGxrMHZcbnFrMGUrckxEQWdNQkFBRUNnZ0VBSStYWm1LaFRSMjhielU2UC9RYmt1TFptQkR1a3JCSkdjQXhYMVBrYWg0MHpcbko1MTBxNThyL0hGYjdWQS9yVjdJNlY1ZFFoUVBETkNlOEpZNmtabUJ5UC9zM1F2YUpWODdaeTk4YmFRd0dvQ1hcbkczUVkydVlTaUcvN2UydEQ5M2JJVTh5K2gyWDhPZTh6aHNqTGw5dW03bHFjQ2FSaUxLT29uUTZMb1pOc2dJUk9cbitwQU9Ed09pcU9DSytkZWMxME9SY2RoRlZOTksweUE2RFNDcE1lSXBUSG1nbmlDWlVCNlN5Q0pkWXl3NUJxQUZcbmdEZUdxdjhqa1pvSTJwd2Zic09tTEFvazdKMzdHcndnTDN4UzRrcXJWSHgwdFZDQkNxMy9vS1dCWUdpTWNMSmRcbkdXeGk5cjcrd01XYm51TmhzbXlxRTZaOCtXQm9TVXlvbm0wZzFYQ21oUUtCZ1FEMWw0UXA2aG1jdXJ0YzN3V1lcbjNQRERMRUhLOGZGbFdOYW5kaHZTa0gwMVJTMnYvelFERzhBQTF1V0N3ZkJ0aHo5eDhleldtSkRhNmhjd25xSWRcbmRPMmV5WkJHTVJPL3JWQXd0eUxlWjNYT1ZzT3pTNXdER3gzempVQjhISUI4MW9oN3lZU1VkYTFxNDlQUE5oNWpcbjRkeEhVOWljeG1XYngzRURpc1hBRHVCVkZ3S0JnUURlb0dBdjRGc3NocXMzY1U1VmcyL3pzdFFXUDBuQmpJaFZcbk5LT3FCWUJhL0RFeThGS2ZEVWFpenVEYllBSUc5ZnJvZTY2YjFtcDRGdzFVeGRsVFhDb1hERXk2WXJjYVRjWVFcbitGOUp6anhFUWFzcDJtYTRNWGFtdG9MMG11ZlNVRFpydHNySnNwTzlOdmp4ZjFJQkR3Zk5NQ3FoSi80WnZPcWVcbnlDUmZvNGF6TlFLQmdRRHMxWkMrV3VNWUlYdE50RVRSaFQ4bytDVDZjUmM1aE5KNzY0b3BKTzJaMFh5ZG5KMnJcbjRiYm5HRlY4STBxWVZUVDV6VE40UHVoeU5Bem85aEdnRm9LUC9oRURuNUJMNS9iTkE4NjhhMGxRRXB2bTY2TW5cbjI1Nm1vRER2Znd6cFZubUg1bTNVUFNkZlRSV1ZYYnN3MXo1MkNvVjVxbG1TUUdMYjU1ZUwvc3lYUVFLQmdRQ05cbnQ3dmpYa2ZMM1dKcTVjYis2cSsraTQwMUtFNlVWaGlIWFAzK2dvZ0Y0MXFTV2FmT3RnM01JRFBGa3FWWHR3aGxcbkxDNm41Mk5aVlJ0WVpxWUV5YnZGZGovMXVsZGkrRFZvb2lOT2dXbWQ3Y3UrMWRmajB5RDcyVjBkeHVwaDJFdjhcblg1MVJya3NiL1QyVnhmMzJ6SkdqemRDbFRDY1dUVXR4am1pUk5URFBMUUtCZ0NDYW5zaXBVczEzRW81cnBwbFZcbnJETkk2TEJUcDAxL09ERjJ1YjJBSVQydFF4RjMwRFN4WWJlZkZOb3JqSzVnOU1NODBpelM4cGhwWlNNK1hqQjVcbkJnTGpWOUlBVVhLbG1rQ0NTZHo0ZDdIZWlqSktUTWt2RW9ZcDgvZTJJc21FaUlXZE1yUG5PT1d3dFVoNUQ4T3RcbnkxdG1yRjhDRVJWR2grdVorOWJQNkd0Z1xuLS0tLS1FTkQgUFJJVkFURSBLRVktLS0tLVxuIiwKICAiY2xpZW50X2VtYWlsIjogImZjMy1tcy1hZG1pbi1kby1jYXRhbG9nb0BmYzMtY29kZWZsaXgtNDQwOTEzLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwKICAiY2xpZW50X2lkIjogIjExMzYyMzI4ODExNzExMDY4NjIxOSIsCiAgImF1dGhfdXJpIjogImh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbS9vL29hdXRoMi9hdXRoIiwKICAidG9rZW5fdXJpIjogImh0dHBzOi8vb2F1dGgyLmdvb2dsZWFwaXMuY29tL3Rva2VuIiwKICAiYXV0aF9wcm92aWRlcl94NTA5X2NlcnRfdXJsIjogImh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL29hdXRoMi92MS9jZXJ0cyIsCiAgImNsaWVudF94NTA5X2NlcnRfdXJsIjogImh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL3JvYm90L3YxL21ldGFkYXRhL3g1MDkvZmMzLW1zLWFkbWluLWRvLWNhdGFsb2dvJTQwZmMzLWNvZGVmbGl4LTQ0MDkxMy5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsCiAgInVuaXZlcnNlX2RvbWFpbiI6ICJnb29nbGVhcGlzLmNvbSIKfQo=" />
